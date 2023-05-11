@@ -16,7 +16,12 @@ def tensor_to_image(tensor):
 
 
 def request_to_image(request):
-    return asarray(Image.open(request.files['image']))
+    image = request.form.get('image', False)
+    print(image)
+    if image:
+        return asarray(Image.open(image))
+    else:return asarray(Image.open(request.files['image']))
+    
 
 def _monet(image, upscale=False):
     IMAGE_SIZE = (256, 256)
@@ -49,13 +54,13 @@ def _monet(image, upscale=False):
 
 def _upscale(image):
     SAVED_MODEL_PATH = "https://tfhub.dev/captain-pool/esrgan-tf2/1"
-    def preprocess_image(image_path):
+    def preprocess_image(_image):
         """ Loads image from path and preprocesses to make it model ready
             Args:
                 image_path: Path to the image file
         """
         #hr_image = tf.image.decode_image(tf.io.read_file(image_path))
-        hr_image = image
+        hr_image = _image
         # If PNG, remove the alpha channel. The model only supports
         # images with 3 color channels.
         if hr_image.shape[-1] == 4:
