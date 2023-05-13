@@ -7,7 +7,7 @@ from numpy import asarray
 from tensorflow.python.ops.numpy_ops import np_config
 np_config.enable_numpy_behavior()
 os.environ["TFHUB_DOWNLOAD_PROGRESS"] = "True"
-
+from huggingface_hub import from_pretrained_keras
 def tensor_to_image(tensor):
     tensor = tf.cast(tf.clip_by_value(tensor, 0, 255), tf.uint8)
     tensor = Image.fromarray(tensor.numpy())
@@ -16,7 +16,7 @@ def tensor_to_image(tensor):
 
 
 def request_to_image(request):
-    image = request.form.get('image', False)
+    image = request.files.get('image', False)
     print(image)
     if image:
         return asarray(Image.open(image))
@@ -31,7 +31,8 @@ def _monet(image, upscale=False):
         image = tf.reshape(image, [*IMAGE_SIZE, 3])
         return image
 
-    new_model = tf.keras.models.load_model('models/monet_generator', compile=False)
+    #new_model = tf.keras.models.load_model('models/monet_generator', compile=False)
+    new_model = from_pretrained_keras("JoshuaPeddle/MonetGenerator")
     #new_model.summary()
     image = tf.image.resize(image, IMAGE_SIZE)
     image = decode_image(image)
