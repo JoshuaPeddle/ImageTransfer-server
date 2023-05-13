@@ -23,7 +23,20 @@ def request_to_image(request):
     else:return asarray(Image.open(request.files['image']))
     
 
+monet_model = None
+upscale_model = None
+
+def load_models():
+    global monet_model
+    global upscale_model
+    monet_model = from_pretrained_keras("JoshuaPeddle/MonetGenerator")
+    upscale_model = hub.load("https://tfhub.dev/captain-pool/esrgan-tf2/1")
+
+
+
+
 def _monet(image, upscale=False):
+    global monet_model
     IMAGE_SIZE = (256, 256)
     def decode_image(image):
         #image = tf.image.decode_jpeg(image, channels=3)
@@ -32,14 +45,14 @@ def _monet(image, upscale=False):
         return image
 
     #new_model = tf.keras.models.load_model('models/monet_generator', compile=False)
-    new_model = from_pretrained_keras("JoshuaPeddle/MonetGenerator")
+    #monet_model = from_pretrained_keras("JoshuaPeddle/MonetGenerator")
     #new_model.summary()
     image = tf.image.resize(image, IMAGE_SIZE)
     image = decode_image(image)
     
     image = tf.expand_dims(image, 0)
     start = time.time()
-    prediction = new_model(image, training=False)
+    prediction = monet_model(image, training=False)
     prediction = tf.reshape(prediction, [256, 256, 3])
     prediction = (prediction + 1) / 2
     prediction = tf.image.convert_image_dtype(prediction, tf.uint8)
@@ -54,7 +67,8 @@ def _monet(image, upscale=False):
 
 
 def _upscale(image):
-    SAVED_MODEL_PATH = "https://tfhub.dev/captain-pool/esrgan-tf2/1"
+    global upscale_model
+    
     def preprocess_image(_image):
         """ Loads image from path and preprocesses to make it model ready
             Args:
@@ -73,11 +87,13 @@ def _upscale(image):
 
 
     hr_image = preprocess_image(image)
-    model = hub.load(SAVED_MODEL_PATH)
+
 
     start = time.time()
-    fake_image = model(hr_image)
+    fake_image = upscale_model(hr_image)
     fake_image = tf.squeeze(fake_image)
     print("Time Taken: %f" % (time.time() - start))
     fake_image = tf.image.resize(fake_image, (512,512))
     return tensor_to_image(fake_image)
+
+load_models()
