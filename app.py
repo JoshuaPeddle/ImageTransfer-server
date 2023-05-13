@@ -13,3 +13,7 @@ def monet():
 @app.route("/upscale", methods=['POST'])
 def upscale():
     return send_file(_upscale(request_to_image(request)), mimetype='image/jpg')
+
+@app.route("/", methods=['GET'])
+def hello():
+    return "Hello World"
