@@ -4,21 +4,28 @@ from huggingface_hub import from_pretrained_keras
 import time 
 from models.utils import tensor_to_image
 
-
+from PIL.ImageOps import fit
+from numpy import asarray
 class MonetGenerator():
 
     def load_model(self):
-        self.model =  from_pretrained_keras("JoshuaPeddle/MonetGenerator")
+        self.model =  from_pretrained_keras("JoshuaPeddle/MonetGenerator", compile=False)
 
     def generate(self, image):
 
         IMAGE_SIZE = (256, 256)
         def decode_image(image):
+ 
+            image = asarray(fit(image, IMAGE_SIZE))
+            if image.shape[-1] == 4:
+                image = image[...,:-1]
             image = (tf.cast(image, tf.float32) / 127.5) - 1
-            image = tf.reshape(image, [*IMAGE_SIZE, 3])
+            
+            #image = tf.reshape(image, [*IMAGE_SIZE, 3])
             return image
-
-        image = tf.image.resize(image, IMAGE_SIZE)
+        #image = image.filter(ImageFilter.GaussianBlur(radius=2))
+        #image = tf.image.resize(image, IMAGE_SIZE)
+        
         image = decode_image(image)
         
         image = tf.expand_dims(image, 0)

@@ -2,7 +2,6 @@ from flask import Flask , request, send_file
 from flask_cors import CORS
 from PIL import Image
 from models.models import upscale, monet
-from numpy import asarray
 
 app = Flask(__name__)
 CORS(app)
@@ -31,5 +30,5 @@ def request_to_image(request):
     image = request.files.get('image', False)
     print(image)
     if image:
-        return asarray(Image.open(image))
-    else:return asarray(Image.open(request.files['image']))
+        return Image.open(image)
+    else:return Image.open(request.files['image'])
