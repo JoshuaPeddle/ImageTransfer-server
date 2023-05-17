@@ -1,12 +1,14 @@
 from flask import Flask , request, send_file
 from flask_cors import CORS
 from PIL import Image
-from models.models import upscale, monet
+from models.models import upscale, monet, gogh
 
 app = Flask(__name__)
 CORS(app)
 
-
+@app.route("/gogh", methods=['POST'])
+def _gogh():
+    return send_file(gogh(request_to_image(request)), mimetype='image/jpg')
 
 @app.route("/monet", methods=['POST'])
 def _monet():
