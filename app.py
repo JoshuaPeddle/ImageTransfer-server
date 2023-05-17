@@ -2,6 +2,7 @@ from flask import Flask , request, send_file
 from flask_cors import CORS
 from PIL import Image
 from models.models import upscale, monet, gogh
+from random_image import generate_random_image_url
 
 app = Flask(__name__)
 CORS(app)
@@ -18,9 +19,22 @@ def _monet():
 def _upscale():
     return send_file(upscale(request_to_image(request)), mimetype='image/jpg')
 
+'''
+TODO: Should generalize the generate function to take in a model name and generate the image
+'''
 @app.route("/generate/<model>", methods=['POST'])
 def _generate(model):
     pass
+
+
+'''
+This route should return a url to a random images hosted from the github repo that that project is hosted from
+'''
+@app.route("/random", methods=['GET'])
+def _random():
+    url : str= generate_random_image_url() 
+    return {'url': url}
+
 
 
 
