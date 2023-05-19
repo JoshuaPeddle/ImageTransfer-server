@@ -7,6 +7,8 @@ from models.Picasso import PicassoGenerator
 from models.Dali import DaliGenerator
 
 
+
+
 generators = {
     "monet": MonetGenerator(),
     "gogh": GoghGenerator(),
@@ -18,8 +20,13 @@ def load_models():
     for generator in generators.values():
         generator.load_model()
 
+def load_model(model):
+    generators[model].load_model()
 
 def generate(image, style):
     return generators[style].generate(image)
 
-load_models()
+def is_loaded(model):
+    return generators[model].is_loaded()
+    
+#load_models()

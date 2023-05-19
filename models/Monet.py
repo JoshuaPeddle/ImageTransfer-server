@@ -1,12 +1,21 @@
-
+from os import environ
+environ["TF_ENABLE_ONEDNN_OPTS"] = "1"
 import tensorflow as tf
+
 from huggingface_hub import from_pretrained_keras
 import time 
 from models.utils import tensor_to_image
 
 from PIL.ImageOps import fit
 from numpy import asarray
+
 class MonetGenerator():
+
+    def __init__(self):
+        self.model = None
+
+    def is_loaded(self):
+        return self.model is not None
 
     def load_model(self):
         self.model =  from_pretrained_keras("JoshuaPeddle/MonetGenerator", compile=False)

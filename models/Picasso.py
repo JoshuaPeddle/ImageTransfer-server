@@ -6,8 +6,16 @@ from models.utils import tensor_to_image
 
 from PIL.ImageOps import fit
 from numpy import asarray
+
 class PicassoGenerator():
 
+
+    def __init__(self):
+        self.model = None
+
+    def is_loaded(self):
+        return self.model is not None
+    
     def load_model(self):
         self.model =  from_pretrained_keras("JoshuaPeddle/PicassoGenerator", compile=False)
 
