@@ -20,12 +20,8 @@ class MonetGenerator():
             if image.shape[-1] == 4:
                 image = image[...,:-1]
             image = (tf.cast(image, tf.float32) / 127.5) - 1
-            
-            #image = tf.reshape(image, [*IMAGE_SIZE, 3])
             return image
-        #image = image.filter(ImageFilter.GaussianBlur(radius=2))
-        #image = tf.image.resize(image, IMAGE_SIZE)
-        
+
         image = decode_image(image)
         
         image = tf.expand_dims(image, 0)
