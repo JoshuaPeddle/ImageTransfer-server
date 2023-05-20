@@ -1,9 +1,7 @@
-
 import tensorflow as tf
-from huggingface_hub import from_pretrained_keras
+from huggingface_hub import from_pretrained_keras, hf_hub_download
 import time 
 from models.utils import tensor_to_image
-
 from PIL.ImageOps import fit
 from numpy import asarray
 class GoghGenerator():
@@ -13,8 +11,21 @@ class GoghGenerator():
 
     def is_loaded(self):
         return self.model is not None
+    
+    def from_pretrained_tflite(self):
+        model = hf_hub_download(repo_id="JoshuaPeddle/GoghGeneratorLite", filename="model.tflite")
+        self.model = tf.lite.Interpreter(model_path=model)
+        self.model.allocate_tensors()
+        self.input_details = self.model.get_input_details()
+        self.output_details = self.model.get_output_details()
+        print(self.input_details)
+        print(self.output_details)
+        print(self.model)
+        print("Loaded Model")
 
-    def load_model(self):
+    def load_model(self, lite=True):
+        if lite:
+            self.from_pretrained_tflite()
         self.model =  from_pretrained_keras("JoshuaPeddle/GoghGenerator", compile=False)
 
     def generate(self, image):
