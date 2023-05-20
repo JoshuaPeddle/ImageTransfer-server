@@ -1,20 +1,21 @@
 from tensorflow.python.ops.numpy_ops import np_config
 np_config.enable_numpy_behavior()
 
-from models.Monet import MonetGenerator
-from models.Gogh import GoghGenerator
-from models.Picasso import PicassoGenerator
-from models.Dali import DaliGenerator
 
+from models.Generator import Generator
 
-
-
-generators = {
-    "monet": MonetGenerator(),
-    "gogh": GoghGenerator(),
-    "picasso": PicassoGenerator(),
-    "dali": DaliGenerator()
+models = {
+    "monet": "MonetGenerator",
+    "gogh": "GoghGenerator",
+    "picasso": "PicassoGenerator",
+    "dali": "DaliGenerator"
 }
+
+generators = {}
+
+for model in models.keys():
+    generators[model] = Generator(models[model], lite=True)
+print(generators)
 
 def load_models():
     for generator in generators.values():
