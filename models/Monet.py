@@ -27,7 +27,6 @@ class MonetGenerator():
     def load_model(self, lite=True):
         if lite:
             self.from_pretrained_tflite()
-    def load_model(self):
         self.model =  from_pretrained_keras("JoshuaPeddle/MonetGenerator", compile=False)
 
     def generate(self, image):
