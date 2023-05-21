@@ -69,8 +69,7 @@ class Generator():
         self.model.set_tensor(self.input_details[0]['index'], image)
         self.model.invoke()
         prediction = self.model.get_tensor(self.output_details[0]['index'])[0]
-        #prediction = tf.reshape(prediction, [256, 256, 3])
-        prediction = (prediction + 1) / 2
+        prediction = (prediction + 1.0) / 2.0
         prediction = tf.image.convert_image_dtype(prediction, tf.uint8)
         print("Time Taken: %f" % (time.time() - start))
         return tensor_to_image(prediction)
