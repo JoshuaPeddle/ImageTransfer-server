@@ -6,6 +6,7 @@ import os
 import functools
 from models.utils import crop_center
 from random import randint
+from time import sleep
 ## Design a general class for generators so that we can easily add new models using a config file
 class FastGenerator():
 
@@ -24,7 +25,8 @@ class FastGenerator():
                 self.style_images[key] = self.load_image(value)
                 return 
             else:
-                self.style_images[key] = [self.load_image(url) for url in urls]
+                self.style_images[key] = [self.load_image(url,_sleep=True) for url in urls]
+             
     
     def load_model(self):
         hub_handle = 'https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2'
@@ -34,7 +36,7 @@ class FastGenerator():
         return True
     
     @functools.lru_cache(maxsize=None)
-    def load_image(self, image_url, image_size=(256, 256), preserve_aspect_ratio=True):
+    def load_image(self, image_url,image_size=(256, 256), preserve_aspect_ratio=True, _sleep=False ):
         """Loads and preprocesses images."""
         # Cache image file locally.
         image_path = tf.keras.utils.get_file(os.path.basename(image_url)[-128:], image_url)
@@ -44,6 +46,9 @@ class FastGenerator():
             channels=3, dtype=tf.float32)[tf.newaxis, ...]
         img = crop_center(img)
         img = tf.image.resize(img, image_size, preserve_aspect_ratio=True)
+        if _sleep:
+            print('sleep')
+            sleep(1)
         return img
 
     def generate(self, image, style):
