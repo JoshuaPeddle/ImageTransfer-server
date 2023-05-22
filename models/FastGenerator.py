@@ -5,6 +5,7 @@ import numpy as np
 import os
 import functools
 from models.utils import crop_center
+from random import randint
 ## Design a general class for generators so that we can easily add new models using a config file
 class FastGenerator():
 
@@ -18,7 +19,12 @@ class FastGenerator():
     
     def load_style_images(self):
         for key, value in self.styles.items():
-            self.style_images[key] = self.load_image(value)
+            urls = value
+            if type(urls) is not list:
+                self.style_images[key] = self.load_image(value)
+                return 
+            else:
+                self.style_images[key] = [self.load_image(url) for url in urls]
     
     def load_model(self):
         hub_handle = 'https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2'
@@ -48,7 +54,10 @@ class FastGenerator():
         image = (tf.cast(image, tf.float32) / 127.5) - 1
 
         image = tf.expand_dims(image, 0)
-        outputs = self.model(tf.constant(image), tf.constant(self.style_images[style]))
+        style_image = self.style_images[style][randint(0, len(self.style_images[style])-1)]
+
+
+        outputs = self.model(tf.constant(image), tf.constant(style_image))
         stylized_image = outputs[0]
         print(stylized_image.shape)
         stylized_image = tf.squeeze(stylized_image)

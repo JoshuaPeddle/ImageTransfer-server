@@ -1,0 +1,40 @@
+ {
+    "monet": [
+        "https://uploads8.wikiart.org/images/claude-monet/haystack-at-giverny-1886.jpg!Large.jpg",
+        "https://uploads4.wikiart.org/00254/images/claude-monet/claude-monet-irises-in-monets-garden-1899-1900.jpg!Large.jpg",
+       " https://uploads2.wikiart.org/images/claude-monet/poplars-at-giverny.jpg!Large.jpg",
+        "https://uploads0.wikiart.org/images/claude-monet/antibes-in-the-morning(1).jpg!Large.jpg",
+        "https://uploads4.wikiart.org/images/claude-monet/haystacks-at-giverny.jpg!Large.jpg",
+       " https://uploads8.wikiart.org/images/claude-monet/autumn-on-the-seine-at-argenteuil.jpg!Large.jpg",
+        "https://uploads0.wikiart.org/00129/images/claude-monet/impression-sunrise.jpg!Large.jpg"
+    ],
+    "gogh": [
+        "https://uploads4.wikiart.org/00142/images/vincent-van-gogh/the-starry-night.jpg!Large.jpg",
+        "https://uploads3.wikiart.org/images/vincent-van-gogh/landscape-with-house-and-ploughman-1889(2).jpg!Large.jpg",
+        "https://uploads6.wikiart.org/images/vincent-van-gogh/red-vineyards-at-arles-1888.jpg!Large.jpg",
+        "https://uploads8.wikiart.org/images/vincent-van-gogh/sower-with-setting-sun-1888-3.jpg!Large.jpg",
+        "https://uploads7.wikiart.org/images/vincent-van-gogh/still-life-vase-with-fifteen-sunflowers-1888-1.jpg!Large.jpg",
+        "https://uploads2.wikiart.org/images/vincent-van-gogh/prisoners-exercising-prisoners-round-1890.jpg!Large.jpg",
+        "https://uploads0.wikiart.org/images/vincent-van-gogh/portrait-of-doctor-gachet-1890.jpg!Large.jpg"
+    ],
+    "dali": [
+        "https://uploads6.wikiart.org/images/salvador-dali/the-persistence-of-memory-1931.jpg!Large.jpg",
+        "https://uploads2.wikiart.org/images/salvador-dali/the-great-masturbator-1929.jpg!Large.jpg",
+        "https://uploads5.wikiart.org/images/salvador-dali/the-disintegration-of-the-persistence-of-memory.jpg!Large.jpg",
+        "https://uploads6.wikiart.org/images/salvador-dali/dream-caused-by-the-flight-of-a-bee-around-a-pomegranate-one-second-before-awakening.jpg!Large.jpg",
+        "https://uploads2.wikiart.org/images/salvador-dali/the-discovery-of-america-by-christopher-columbus-1959.jpg!Large.jpg",
+        "https://uploads4.wikiart.org/images/salvador-dali/cadaques-1.jpg!Large.jpg",
+        "https://uploads7.wikiart.org/images/salvador-dali/crystalline-still-life.jpg!Large.jpg"
+    ],
+    "picasso": [
+        "https://d3d00swyhr67nd.cloudfront.net/w800h800/collection/TATE/TATE/TATE_TATE_T05010_10-001.jpg",
+        "https://uploads2.wikiart.org/00198/images/pablo-picasso/old-guitarist-chicago.jpg!Large.jpg",
+        "https://uploads0.wikiart.org/images/pablo-picasso/portrait-of-ambroise-vollard-1910.jpg!Large.jpg",
+        "https://uploads0.wikiart.org/images/pablo-picasso/untitled-1937-8.jpg!Large.jpg",
+        "https://uploads5.wikiart.org/images/pablo-picasso/child-with-dove-1901.jpg!Large.jpg",
+        "https://uploads8.wikiart.org/images/pablo-picasso/cat-catching-a-bird-1939.jpg",
+        "https://uploads1.wikiart.org/images/pablo-picasso/plaster-head-and-arm-1925.jpg!Large.jpg"
+
+    ]
+
+}
