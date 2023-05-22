@@ -1,7 +1,7 @@
 from flask import Flask , request, send_file, Request
 from flask_cors import CORS
 from PIL import Image
-from models.models import generate, load_model
+from models.models import generate, load_model, get_styles
 from random_image import generate_random_image_url
 
 app = Flask(__name__)
@@ -21,12 +21,15 @@ TODO: Should generalize the generate function to take in a model name and genera
 '''
 @app.route("/generate/<model>", methods=['POST'])
 def _generate(model):
-
     return send_file(generate(request_to_image(request), model), mimetype='image/jpg')
 
 @app.route("/", methods=['GET'])
 def hello():
     return "Hello World"
+
+@app.route("/styles", methods=['GET'])
+def styles():
+    return get_styles()
 
 
 def request_to_image(request: Request):

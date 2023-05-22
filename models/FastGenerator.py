@@ -20,12 +20,17 @@ class FastGenerator():
     
     def load_style_images(self):
         for key, value in self.styles.items():
-            urls = value
+            print(key, value)
+
+            urls = value['style_images']
             if type(urls) is not list:
                 self.style_images[key] = self.load_image(value)
                 return 
             else:
                 self.style_images[key] = [self.load_image(url,_sleep=True) for url in urls]
+        for key, value in self.style_images.items():
+            self.style_images[key] = [tf.nn.avg_pool(item, ksize=[3,3], strides=[1,1], padding='SAME') for item in value]
+            print('pooling')
              
     
     def load_model(self):
@@ -48,7 +53,7 @@ class FastGenerator():
         img = tf.image.resize(img, image_size, preserve_aspect_ratio=True)
         if _sleep:
             print('sleep')
-            sleep(1)
+            sleep(0.05)
         return img
 
     def generate(self, image, style):

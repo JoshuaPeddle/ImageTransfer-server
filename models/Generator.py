@@ -73,3 +73,4 @@ class Generator():
         prediction = tf.image.convert_image_dtype(prediction, tf.uint8)
         print("Time Taken: %f" % (time.time() - start))
         return tensor_to_image(prediction)
+    
