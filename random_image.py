@@ -10,9 +10,6 @@ def load_image_names():
 
 random_images = load_image_names()
 
-print(random_images)
-
-
 def generate_random_image_url():    
     return URL_ROOT + random_images[randint(0, len(random_images) - 1)]
     
