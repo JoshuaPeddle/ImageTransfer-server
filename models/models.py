@@ -1,33 +1,26 @@
-from tensorflow.python.ops.numpy_ops import np_config
-np_config.enable_numpy_behavior()
+from models.FastGenerator import FastGenerator
 
 
-from models.Generator import Generator
+IMAGE_SIZE = (512, 512)
 
-models = {
-    "monet": "MonetGenerator",
-    "gogh": "GoghGenerator",
-    "picasso": "PicassoGenerator",
-    "dali": "DaliGenerator"
+model = None
+
+styles = {
+    'monet': 'https://uploads8.wikiart.org/images/claude-monet/haystack-at-giverny-1886.jpg!Large.jpg',
+    'gogh': 'https://uploads4.wikiart.org/00142/images/vincent-van-gogh/the-starry-night.jpg!Large.jpg',
+    'dali': 'https://uploads6.wikiart.org/images/salvador-dali/the-persistence-of-memory-1931.jpg!Large.jpg',
+    'picasso': 'https://d3d00swyhr67nd.cloudfront.net/w800h800/collection/TATE/TATE/TATE_TATE_T05010_10-001.jpg',
+    'kandinsky': 'https://uploads2.wikiart.org/images/wassily-kandinsky/moscow-i-1916.jpg!Large.jpg',
 }
 
-generators = {}
+generator = FastGenerator(styles)
 
-for model in models.keys():
-    generators[model] = Generator(models[model], lite=True)
-print(generators)
-
-def load_models():
-    for generator in generators.values():
-        generator.load_model()
-
-def load_model(model):
-    generators[model].load_model()
-
+def load_model():
+    loaded = generator.load_model()
+    return loaded
+    
 def generate(image, style):
-    return generators[style].generate(image)
+    return generator.generate(image, style)
 
 def is_loaded(model):
-    return generators[model].is_loaded()
-    
-#load_models()
+    return generator.is_loaded()

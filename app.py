@@ -1,7 +1,7 @@
 from flask import Flask , request, send_file, Request
 from flask_cors import CORS
 from PIL import Image
-from models.models import generate, load_models 
+from models.models import generate, load_model
 from random_image import generate_random_image_url
 
 app = Flask(__name__)
@@ -38,4 +38,4 @@ def request_to_image(request: Request):
 
 # push context manually to app
 with app.app_context():
-    load_models()
+    load_model()
