@@ -14,6 +14,7 @@ class FastGenerator():
         self.model = None
         self.styles = styles
         self.style_images = {}
+        self.image = None
 
     def is_loaded(self):
         return self.model is not None
@@ -42,7 +43,6 @@ class FastGenerator():
         self.load_style_images()
         return True
     
-    @functools.lru_cache(maxsize=None)
     def load_image(self, image_url,image_size=(256, 256), preserve_aspect_ratio=True, _sleep=False ):
         """Loads and preprocesses images."""
         # Cache image file locally.
@@ -61,37 +61,37 @@ class FastGenerator():
             #print('sleep')
             sleep(0.05)
         return img
-
-    def generate(self, image, style, variant=None, premultiply=True):
+    
+    @functools.lru_cache(maxsize=20)
+    def preprosess_image(self, uuid, premultiply):
+        image = self.image
         image = np.asarray(image)
         ## Drop the alpha channel if it exists
-        
         if image.shape[-1] == 4:
             if premultiply:
                 if image.shape[-1] == 4:
-                    # Copy the image to avoid modifying it in place
-                    image = image.copy()
-                    # Premultiply the RGB channels by the alpha channel
-                    image[..., :3] *= image[..., 3:4]
-                    # Remove the alpha channel
-                    image = image[..., :3]
+                    image = image.copy() # Copy the image to avoid modifying it in place
+                    image[..., :3] *= image[..., 3:4] # Premultiply the RGB channels by the alpha channel
+                    image = image[..., :3] # Remove the alpha channel
             else:
                 image = image[...,:-1]
         ## Normalize the image
         image = (tf.cast(image, tf.float32) / 127.5) - 1
-
         image = tf.expand_dims(image, 0)
+        return image, uuid
+
+
+    def generate(self, image, style, variant=None, premultiply=True, uuid=None):
+        self.image = image
+        image, uuid = self.preprosess_image(uuid, premultiply)
         if variant is not None:
             style_image = self.style_images[style][variant]
         else:
             style_image = self.style_images[style][randint(0, len(self.style_images[style])-1)]
         outputs = self.model(tf.constant(image), tf.constant(style_image))
         stylized_image = outputs[0]
-        print(stylized_image.shape)
         stylized_image = tf.squeeze(stylized_image)
-
-        # beta = 0.5  # Defines the blend factor (0.0 - original image, 1.0 - stylized image)
-        # blended = cv2.addWeighted(original_image, 1 - beta, stylized_image, beta, 0)
-        stylized_image = stylized_image*255.0
+        stylized_image = stylized_image * 255.0
+        print(self.preprosess_image.cache_info())
         return tensor_to_image(stylized_image)
     
