@@ -21,7 +21,17 @@ TODO: Should generalize the generate function to take in a model name and genera
 '''
 @app.route("/generate/<model>", methods=['POST'])
 def _generate(model):
-    return send_file(generate(request_to_image(request), model), mimetype='image/jpg')
+    byte_arr = generate(request_to_image(request), model)
+    return send_file(byte_arr, mimetype='image/jpg')
+
+
+'''
+TODO: Should generalize the generate function to take in a model name and generate the image
+'''
+@app.route("/generate/<model>/<variant>", methods=['POST'])
+def _generate_variant(model, variant):
+    byte_arr = generate(request_to_image(request), model, int(variant))
+    return send_file(byte_arr, mimetype='image/jpg')
 
 @app.route("/", methods=['GET'])
 def hello():

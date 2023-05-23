@@ -31,13 +31,10 @@ class FastGenerator():
                     val = self.load_image(url,_sleep=True)
                     if val is not None:
                         self.style_images[key].append(val)
-
-
         for key, value in self.style_images.items():
             self.style_images[key] = [tf.nn.avg_pool(item, ksize=[3,3], strides=[1,1], padding='SAME') for item in value]
-            print('pooling')
+            #print('pooling')
              
-    
     def load_model(self):
         hub_handle = 'https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2'
         hub_module = hub.load(hub_handle)
@@ -61,21 +58,33 @@ class FastGenerator():
         img = crop_center(img)
         img = tf.image.resize(img, image_size, preserve_aspect_ratio=True)
         if _sleep:
-            print('sleep')
-            sleep(1)
+            #print('sleep')
+            sleep(0.05)
         return img
 
-    def generate(self, image, style):
+    def generate(self, image, style, variant=None, premultiply=True):
         image = np.asarray(image)
-        ## Normalize the image
+        ## Drop the alpha channel if it exists
+        
         if image.shape[-1] == 4:
-            image = image[...,:-1]
+            if premultiply:
+                if image.shape[-1] == 4:
+                    # Copy the image to avoid modifying it in place
+                    image = image.copy()
+                    # Premultiply the RGB channels by the alpha channel
+                    image[..., :3] *= image[..., 3:4]
+                    # Remove the alpha channel
+                    image = image[..., :3]
+            else:
+                image = image[...,:-1]
+        ## Normalize the image
         image = (tf.cast(image, tf.float32) / 127.5) - 1
 
         image = tf.expand_dims(image, 0)
-        style_image = self.style_images[style][randint(0, len(self.style_images[style])-1)]
-
-
+        if variant is not None:
+            style_image = self.style_images[style][variant]
+        else:
+            style_image = self.style_images[style][randint(0, len(self.style_images[style])-1)]
         outputs = self.model(tf.constant(image), tf.constant(style_image))
         stylized_image = outputs[0]
         print(stylized_image.shape)
