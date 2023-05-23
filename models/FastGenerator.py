@@ -89,6 +89,9 @@ class FastGenerator():
         stylized_image = outputs[0]
         print(stylized_image.shape)
         stylized_image = tf.squeeze(stylized_image)
+
+        # beta = 0.5  # Defines the blend factor (0.0 - original image, 1.0 - stylized image)
+        # blended = cv2.addWeighted(original_image, 1 - beta, stylized_image, beta, 0)
         stylized_image = stylized_image*255.0
         return tensor_to_image(stylized_image)
     
