@@ -1,105 +1,103 @@
 {
     "monet": {
         "style_images": [
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ44ma1Zna7SK6Ty16vKUgKBblwtIkvNJxoBA&usqp=CAU",
-            "https://uploads8.wikiart.org/images/claude-monet/haystack-at-giverny-1886.jpg!Large.jpg",
-            "https://uploads4.wikiart.org/00254/images/claude-monet/claude-monet-irises-in-monets-garden-1899-1900.jpg!Large.jpg",
-            "https://uploads0.wikiart.org/images/claude-monet/antibes-in-the-morning(1).jpg!Large.jpg",
-            "https://uploads4.wikiart.org/images/claude-monet/haystacks-at-giverny.jpg!Large.jpg",
-            "https://uploads8.wikiart.org/images/claude-monet/autumn-on-the-seine-at-argenteuil.jpg!Large.jpg"
+            "https://ik.imagekit.io/4adj1pc55/monet_0_n6geYN8UM.jpg",
+            "https://ik.imagekit.io/4adj1pc55/monet_1_eq3Pp3_1Q.jpg",
+            "https://ik.imagekit.io/4adj1pc55/monet_2_MsqwAaR2A.jpg",
+            "https://ik.imagekit.io/4adj1pc55/monet_3_DdXIEwww1.jpg",
+            "https://ik.imagekit.io/4adj1pc55/monet_4_IcHNqm-5m.jpg",
+            "https://ik.imagekit.io/4adj1pc55/monet_5_e1vYOXTk5.jpg"
         ],
-        "mini" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ44ma1Zna7SK6Ty16vKUgKBblwtIkvNJxoBA&usqp=CAU",
+        "mini": "https://ik.imagekit.io/4adj1pc55/monet_0_n6geYN8UM.jpg",
         "style_name": "Monet"
     },
     "gogh": {
         "style_images": [
-            "https://uploads4.wikiart.org/00142/images/vincent-van-gogh/the-starry-night.jpg!Large.jpg",
-            "https://uploads3.wikiart.org/images/vincent-van-gogh/landscape-with-house-and-ploughman-1889(2).jpg!Large.jpg",
-            "https://uploads6.wikiart.org/images/vincent-van-gogh/red-vineyards-at-arles-1888.jpg!Large.jpg",
-            "https://uploads8.wikiart.org/images/vincent-van-gogh/sower-with-setting-sun-1888-3.jpg!Large.jpg",
-            "https://uploads7.wikiart.org/images/vincent-van-gogh/still-life-vase-with-fifteen-sunflowers-1888-1.jpg!Large.jpg",
-            "https://uploads0.wikiart.org/images/vincent-van-gogh/portrait-of-doctor-gachet-1890.jpg!Large.jpg"
+            "https://ik.imagekit.io/4adj1pc55/gogh_0_7p7YyHlFV.jpg",
+            "https://ik.imagekit.io/4adj1pc55/gogh_1_k2M5WbzW4.jpg",
+            "https://ik.imagekit.io/4adj1pc55/gogh_2_3N08quZr9.jpg",
+            "https://ik.imagekit.io/4adj1pc55/gogh_3_2HN2O39C8.jpg",
+            "https://ik.imagekit.io/4adj1pc55/gogh_4_xyygBk7XO.jpg",
+            "https://ik.imagekit.io/4adj1pc55/gogh_5_zi8-InTdH.jpg"
         ],
-        "mini" : "https://uploads3.wikiart.org/00142/images/vincent-van-gogh/the-starry-night.jpg!PinterestSmall.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/gogh_0_7p7YyHlFV.jpg",
         "style_name": "Van Gogh"
     },
     "dali": {
         "style_images": [
-            "https://uploads5.wikiart.org/images/salvador-dali/the-disintegration-of-the-persistence-of-memory.jpg!Large.jpg",
-            "https://uploads6.wikiart.org/images/salvador-dali/the-persistence-of-memory-1931.jpg!Large.jpg",
-            "https://uploads2.wikiart.org/images/salvador-dali/the-great-masturbator-1929.jpg!Large.jpg",
-            "https://uploads6.wikiart.org/images/salvador-dali/dream-caused-by-the-flight-of-a-bee-around-a-pomegranate-one-second-before-awakening.jpg!Large.jpg",
-            "https://uploads2.wikiart.org/images/salvador-dali/the-discovery-of-america-by-christopher-columbus-1959.jpg!Large.jpg",
-            "https://uploads4.wikiart.org/images/salvador-dali/cadaques-1.jpg!Large.jpg",
-            "https://uploads7.wikiart.org/images/salvador-dali/crystalline-still-life.jpg!Large.jpg"
+            "https://ik.imagekit.io/4adj1pc55/dali_0_XR14cNsn0.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_1_BduxrbZYkH.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_2_VQiQHKPpD.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_3_RPFerLIIf.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_4_keey-wvzZ.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_5_khgb-MO4O.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_6_Jiild5GPJ.jpg"
         ],
-        "mini" : "https://uploads0.wikiart.org/images/pablo-picasso/a-bullfight-1934.jpg!PinterestSmall.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/dali_0_XR14cNsn0.jpg",
         "style_name": "Dali"
     },
     "picasso": {
         "style_images": [
-            "https://uploads0.wikiart.org/images/pablo-picasso/a-bullfight-1934.jpg",
-            "https://d3d00swyhr67nd.cloudfront.net/w800h800/collection/TATE/TATE/TATE_TATE_T05010_10-001.jpg",
-            "https://uploads2.wikiart.org/00198/images/pablo-picasso/old-guitarist-chicago.jpg!Large.jpg",
-            "https://uploads0.wikiart.org/images/pablo-picasso/portrait-of-ambroise-vollard-1910.jpg!Large.jpg",
-            "https://uploads0.wikiart.org/images/pablo-picasso/untitled-1937-8.jpg!Large.jpg",
-            "https://uploads5.wikiart.org/images/pablo-picasso/child-with-dove-1901.jpg!Large.jpg",
-            "https://uploads8.wikiart.org/images/pablo-picasso/cat-catching-a-bird-1939.jpg",
-            "https://uploads1.wikiart.org/images/pablo-picasso/plaster-head-and-arm-1925.jpg!Large.jpg"
+            "https://ik.imagekit.io/4adj1pc55/picasso_0_uVh1-W3Fd.jpg",
+            "https://ik.imagekit.io/4adj1pc55/picasso_1_dv-w0fSFc.jpg",
+            "https://ik.imagekit.io/4adj1pc55/picasso_2_PKuDOC66C.jpg",
+            "https://ik.imagekit.io/4adj1pc55/picasso_3_8fOhTYpzQ.jpg",
+            "https://ik.imagekit.io/4adj1pc55/picasso_4_i6Cm_8GLJ.jpg",
+            "https://ik.imagekit.io/4adj1pc55/picasso_5_F-6jPL18z.jpg",
+            "https://ik.imagekit.io/4adj1pc55/picasso_6_PpZP8IDEk.jpg",
+            "https://ik.imagekit.io/4adj1pc55/picasso_7_OqD4aSGd7.jpg"
         ],
-        "mini" : "https://uploads1.wikiart.org/images/pablo-picasso/plaster-head-and-arm-1925.jpg!PinterestSmall.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/picasso_0_uVh1-W3Fd.jpg",
         "style_name": "Picasso"
     },
     "frank": {
         "style_images": [
-            "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/automaton-morgan-richardson.jpg",
-            "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/booberries-morgan-richardson.jpg",
-            "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/chaos-theory-morgan-richardson.jpg",
-            "https://hips.hearstapps.com/hmg-prod/images/766/lisa-frank-products-main-1492528321.jpg",
-            "https://render.fineartamerica.com/images/rendered/search/print/8/5.5/break/images/artworkimages/medium/1/first-summer-morgan-richardson.jpg"
+            "https://ik.imagekit.io/4adj1pc55/frank_0_O3t6BE_en.jpg",
+            "https://ik.imagekit.io/4adj1pc55/frank_1_FgcR1L8T4.jpg",
+            "https://ik.imagekit.io/4adj1pc55/frank_2_TBiyE0qCv.jpg",
+            "https://ik.imagekit.io/4adj1pc55/frank_3_N58KC8Wz6.jpg",
+            "https://ik.imagekit.io/4adj1pc55/frank_4_S3K0spMJ1.jpg"
         ],
-        "mini" : "https://render.fineartamerica.com/images/rendered/search/print/8/5.5/break/images/artworkimages/medium/1/first-summer-morgan-richardson.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/frank_4_S3K0spMJ1.jpg",
         "style_name": "Lisa Frank"
     },
     "space": {
         "style_images": [
-            "https://assets1.cbsnewsstatic.com/hub/i/r/2021/08/02/d9ac932d-6482-4798-9b9e-96caec967826/thumbnail/620x463/9ef7321a2c4274bab26eb11694f4d368/galaxiescollide.jpg",
-            "https://assets2.cbsnewsstatic.com/hub/i/r/2021/08/02/51d2a1ec-0110-4631-86e2-01f4ccdb4906/thumbnail/620x388/b170af8ae239e9a879baac43d24b8462/horsehead.jpg",
-            "https://assets2.cbsnewsstatic.com/hub/i/r/2021/08/02/e65c6236-5b2c-4530-aa2e-63140717b8d0/thumbnail/620x517/3cc04e4a012840fa01d8c996599efc93/messier33.jpg",
-            "https://assets2.cbsnewsstatic.com/hub/i/r/2021/08/02/ed815531-565f-4eba-9c9f-c273f10edac7/thumbnail/620x561/05e50f9d9fe34a1dfca9a0b73f17d5fe/lagoonnebula.jpg",
-            "https://assets3.cbsnewsstatic.com/hub/i/r/2021/08/02/83e6a22f-1ded-46eb-8c23-3089efa5109a/thumbnail/620x579/ff7961853ddacb7765dc9e90afe256cd/biggalaxieshubble.jpg",
-            "https://assets2.cbsnewsstatic.com/hub/i/r/2021/08/02/ec6a6d48-c745-4af8-81bb-edb86277cb12/thumbnail/620x623/d61d672e22b77d7b237e5ccfc351db2e/hubblemedusamerger.jpg"
+            "https://ik.imagekit.io/4adj1pc55/space_0_cv-DYP-F-.jpg",
+            "https://ik.imagekit.io/4adj1pc55/space_1_-gwPq69Sv.jpg",
+            "https://ik.imagekit.io/4adj1pc55/space_2_3CId2z_PZ.jpg",
+            "https://ik.imagekit.io/4adj1pc55/space_3_Ls-u0XkOL.jpg",
+            "https://ik.imagekit.io/4adj1pc55/space_4_mSqGa0M3l.jpg",
+            "https://ik.imagekit.io/4adj1pc55/space_5_FpvUHxUQI.jpg"
         ],
-        "mini" : "https://assets3.cbsnewsstatic.com/hub/i/r/2021/08/02/b1c4df2e-684e-49f6-9447-dda3b54c3465/thumbnail/620x464/52a5a74846d18bb130bda874737d486f/nebulaandplanets.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/space_0_cv-DYP-F-.jpg",
         "style_name": "Outer Space"
     },
     "stained": {
         "style_images": [
-            "https://www.loyola.edu/-/media/explore/grove/christmas-at-loyola-2022/assumption-of-mary-detail-min",
-            "https://news.stanford.edu/report/wp-content/uploads/sites/3/2021/11/20211116_stained_glass_N6A8821.jpg"
+            "https://ik.imagekit.io/4adj1pc55/stained_0_jhZpLxN-v.jpg",
+            "https://ik.imagekit.io/4adj1pc55/stained_1_thcW3UZxT.jpg",
+            "https://ik.imagekit.io/4adj1pc55/stained_2_FnSzQ1fKt.jpg",
+            "https://ik.imagekit.io/4adj1pc55/stained_3_px2zuxgGD.jpg"
         ],
-        "mini" : "https://www.shutterstock.com/shutterstock/videos/1062690004/thumb/1.jpg?ip=x480",
+        "mini": "https://ik.imagekit.io/4adj1pc55/stained_0_jhZpLxN-v.jpg",
         "style_name": "Stained Glass"
     },
     "gothic": {
         "style_images": [
-            "https://i.imgur.com/MSRPMlt.jpg",
-            "https://i.imgur.com/g2rAvCX.jpg"
+            "https://ik.imagekit.io/4adj1pc55/gothic_0_b3_dgXqhV.jpg",
+            "https://ik.imagekit.io/4adj1pc55/gothic_1_DOju8tHmbg.jpg"
         ],
-        "mini" : "https://i.imgur.com/MSRPMlt.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/gothic_0_b3_dgXqhV.jpg",
         "style_name": "Gothic"
     },
     "kaleidoscope": {
         "style_images": [
-            "https://www.sciencebuddies.org/R60v5yo2_tnKueeqYITMiukz-Do=/500x391/-/https/www.sciencebuddies.org/cdn/Files/6154/6/Kaleidoscope-image.jpg",
-            "https://cdn.britannica.com/52/19552-050-36C2BECD/kaleidoscope-pattern.jpg",
-            "https://www.lawofheartcoherence.com/wp-content/uploads/fly-images/337/kaleidoscope-trance-meditation-hypnosis-Joe-dispenza-1420x600-c.jpg"
+            "https://ik.imagekit.io/4adj1pc55/kaleidoscope_0_aT2sySIl3Z.jpg",
+            "https://ik.imagekit.io/4adj1pc55/kaleidoscope_1_nJSP6-OAu.jpg",
+            "https://ik.imagekit.io/4adj1pc55/kaleidoscope_2_0_ttvLP00j.jpg"
         ],
-        "mini" : "https://www.lawofheartcoherence.com/wp-content/uploads/fly-images/337/kaleidoscope-trance-meditation-hypnosis-Joe-dispenza-1420x600-c.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/kaleidoscope_0_aT2sySIl3Z.jpg",
         "style_name": "Kaleidoscope"
     }
-    
-    
-
 }
-
