@@ -53,7 +53,7 @@ class FastGenerator():
         img = tf.image.resize(img, image_size, preserve_aspect_ratio=True)
         if _sleep:
             print('sleep')
-            sleep(0.05)
+            sleep(1)
         return img
 
     def generate(self, image, style):
