@@ -20,14 +20,19 @@ class FastGenerator():
     
     def load_style_images(self):
         for key, value in self.styles.items():
-            print(key, value)
-
             urls = value['style_images']
             if type(urls) is not list:
-                self.style_images[key] = self.load_image(value)
+                val = self.load_image(value)
+                self.style_images[key] = val
                 return 
             else:
-                self.style_images[key] = [self.load_image(url,_sleep=True) for url in urls]
+                self.style_images[key] = []
+                for url in urls:
+                    val = self.load_image(url,_sleep=True)
+                    if val is not None:
+                        self.style_images[key].append(val)
+
+
         for key, value in self.style_images.items():
             self.style_images[key] = [tf.nn.avg_pool(item, ksize=[3,3], strides=[1,1], padding='SAME') for item in value]
             print('pooling')
@@ -44,7 +49,11 @@ class FastGenerator():
     def load_image(self, image_url,image_size=(256, 256), preserve_aspect_ratio=True, _sleep=False ):
         """Loads and preprocesses images."""
         # Cache image file locally.
-        image_path = tf.keras.utils.get_file(os.path.basename(image_url)[-128:], image_url)
+        try :
+            image_path = tf.keras.utils.get_file(os.path.basename(image_url)[-128:], image_url)
+        except:
+            print('failed to load image')
+            return None
         # Load and convert to float32 numpy array, add batch dimension, and normalize to range [0, 1].
         img = tf.io.decode_image(
             tf.io.read_file(image_path),
