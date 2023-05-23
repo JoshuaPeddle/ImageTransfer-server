@@ -10,6 +10,7 @@ Install the dependencies using pip.
 ```bash
 pip install -r requirements.txt
 ```
+
 ## Running the Application
 Run the application with the following command:
 
@@ -58,3 +59,13 @@ MIT
 docker buildx build --platform linux/amd64,linux/arm64 -t joshuapeddle/imagetransfer-server:0.0.2 --push .
 
 docker run -p 5000:5000 joshuapeddle/imagetransfer-server:0.0.2
+
+
+
+## Imagekit upload styles
+```bash
+pip install Imagekit
+```
+```bash
+python imagekit_upload.py
+```
