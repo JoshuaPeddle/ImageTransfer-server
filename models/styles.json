@@ -50,5 +50,17 @@
         ],
         "mini" : "https://uploads1.wikiart.org/images/pablo-picasso/plaster-head-and-arm-1925.jpg!PinterestSmall.jpg",
         "style_name": "Picasso"
+    },
+    "frank": {
+        "style_images": [
+            "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/automaton-morgan-richardson.jpg",
+            "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/booberries-morgan-richardson.jpg",
+            "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/chaos-theory-morgan-richardson.jpg",
+            "https://hips.hearstapps.com/hmg-prod/images/766/lisa-frank-products-main-1492528321.jpg",
+            "https://render.fineartamerica.com/images/rendered/search/print/8/5.5/break/images/artworkimages/medium/1/first-summer-morgan-richardson.jpg"
+        ],
+        "mini" : "https://render.fineartamerica.com/images/rendered/search/print/8/5.5/break/images/artworkimages/medium/1/first-summer-morgan-richardson.jpg",
+        "style_name": "Lisa Frank"
     }
+
 }
