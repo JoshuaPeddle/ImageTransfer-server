@@ -61,6 +61,46 @@
         ],
         "mini" : "https://render.fineartamerica.com/images/rendered/search/print/8/5.5/break/images/artworkimages/medium/1/first-summer-morgan-richardson.jpg",
         "style_name": "Lisa Frank"
+    },
+    "space": {
+        "style_images": [
+            "https://assets1.cbsnewsstatic.com/hub/i/r/2021/08/02/d9ac932d-6482-4798-9b9e-96caec967826/thumbnail/620x463/9ef7321a2c4274bab26eb11694f4d368/galaxiescollide.jpg",
+            "https://assets2.cbsnewsstatic.com/hub/i/r/2021/08/02/51d2a1ec-0110-4631-86e2-01f4ccdb4906/thumbnail/620x388/b170af8ae239e9a879baac43d24b8462/horsehead.jpg",
+            "https://assets2.cbsnewsstatic.com/hub/i/r/2021/08/02/e65c6236-5b2c-4530-aa2e-63140717b8d0/thumbnail/620x517/3cc04e4a012840fa01d8c996599efc93/messier33.jpg",
+            "https://assets2.cbsnewsstatic.com/hub/i/r/2021/08/02/ed815531-565f-4eba-9c9f-c273f10edac7/thumbnail/620x561/05e50f9d9fe34a1dfca9a0b73f17d5fe/lagoonnebula.jpg",
+            "https://assets3.cbsnewsstatic.com/hub/i/r/2021/08/02/83e6a22f-1ded-46eb-8c23-3089efa5109a/thumbnail/620x579/ff7961853ddacb7765dc9e90afe256cd/biggalaxieshubble.jpg",
+            "https://assets2.cbsnewsstatic.com/hub/i/r/2021/08/02/ec6a6d48-c745-4af8-81bb-edb86277cb12/thumbnail/620x623/d61d672e22b77d7b237e5ccfc351db2e/hubblemedusamerger.jpg"
+        ],
+        "mini" : "https://assets3.cbsnewsstatic.com/hub/i/r/2021/08/02/b1c4df2e-684e-49f6-9447-dda3b54c3465/thumbnail/620x464/52a5a74846d18bb130bda874737d486f/nebulaandplanets.jpg",
+        "style_name": "Outer Space"
+    },
+    "stained": {
+        "style_images": [
+            "https://www.loyola.edu/-/media/explore/grove/christmas-at-loyola-2022/assumption-of-mary-detail-min",
+            "https://news.stanford.edu/report/wp-content/uploads/sites/3/2021/11/20211116_stained_glass_N6A8821.jpg"
+        ],
+        "mini" : "https://www.shutterstock.com/shutterstock/videos/1062690004/thumb/1.jpg?ip=x480",
+        "style_name": "Stained Glass"
+    },
+    "gothic": {
+        "style_images": [
+            "https://i.imgur.com/MSRPMlt.jpg",
+            "https://i.imgur.com/g2rAvCX.jpg"
+        ],
+        "mini" : "https://i.imgur.com/MSRPMlt.jpg",
+        "style_name": "Gothic"
+    },
+    "kaleidoscope": {
+        "style_images": [
+            "https://www.sciencebuddies.org/R60v5yo2_tnKueeqYITMiukz-Do=/500x391/-/https/www.sciencebuddies.org/cdn/Files/6154/6/Kaleidoscope-image.jpg",
+            "https://cdn.britannica.com/52/19552-050-36C2BECD/kaleidoscope-pattern.jpg",
+            "https://www.lawofheartcoherence.com/wp-content/uploads/fly-images/337/kaleidoscope-trance-meditation-hypnosis-Joe-dispenza-1420x600-c.jpg"
+        ],
+        "mini" : "https://www.lawofheartcoherence.com/wp-content/uploads/fly-images/337/kaleidoscope-trance-meditation-hypnosis-Joe-dispenza-1420x600-c.jpg",
+        "style_name": "Kaleidoscope"
     }
+    
+    
 
 }
+
