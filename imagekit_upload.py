@@ -1,15 +1,17 @@
+import os
 import requests
 import base64
 import json
 from PIL import Image
 from io import BytesIO
+from dotenv import load_dotenv
 
+load_dotenv()
 
 API_ENDPOINT = "https://upload.imagekit.io/api/v1/files/upload"
-PRIVATE_KEY = "private_Qc1iRRmiJXaBsdfNjD8rYC/KlRI="  # replace with your actual private key
-PUBLIC_KEY = "public_ag4CjhEoRE2L49z4N+Z8FOaG0Yw="  # replace with your actual public key
+PRIVATE_KEY = os.getenv("IMAGEKIT_PRIVATE_KEY")  # replace with your actual private key
+PUBLIC_KEY = os.getenv("IMAGEKIT_PUBLIC_KEY")  # replace with your actual public key
 STYLE_FILE = "./models/styles.json"
-
 
 
 
