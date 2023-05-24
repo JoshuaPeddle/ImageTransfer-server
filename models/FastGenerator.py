@@ -44,7 +44,7 @@ class FastGenerator():
         self.load_style_images()
         if self.lite:
             lite_model =  tf.keras.utils.get_file('style_transform2.tflite', 'https://tfhub.dev/google/lite-model/magenta/arbitrary-image-stylization-v1-256/int8/transfer/1?lite-format=tflite')
-            self.lite_model = tf.lite.Interpreter(model_path=lite_model, num_threads=2)
+            self.lite_model = tf.lite.Interpreter(model_path=lite_model, num_threads=min(os.cpu_count(), 4))
             self.lite_model.allocate_tensors()
             self.style_predict_lite_setup()
             return True
