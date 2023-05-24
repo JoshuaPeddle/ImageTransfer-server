@@ -1,7 +1,5 @@
 from models.FastGenerator import FastGenerator
 import json
-from random import randint
-from functools import cache
 
 # Load style from ./styles.json
 with open('models/styles.json') as f:
@@ -16,7 +14,8 @@ def load_model():
 def generate(image, style, variant=None, uuid=None):
     return generator.generate(image, style=style, variant=variant, uuid=uuid)
 
-# This return JSON. The key shoul dbe each style available, and the value should be a single URL corresponding to the first
+# This return JSON. The key shoul dbe each style available, 
+# and the value should be a single URL corresponding to the first
 # entry of styles.json for that style
 
 def get_styles():

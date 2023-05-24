@@ -4,6 +4,7 @@ import base64
 import json
 from PIL import Image
 from io import BytesIO
+from imagekitio import ImageKit
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -13,20 +14,14 @@ PRIVATE_KEY = os.getenv("IMAGEKIT_PRIVATE_KEY")  # replace with your actual priv
 PUBLIC_KEY = os.getenv("IMAGEKIT_PUBLIC_KEY")  # replace with your actual public key
 STYLE_FILE = "./models/styles.json"
 
-
-
-
-
-from imagekitio import ImageKit
-
-headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)\
+AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
 
 imagekit = ImageKit(
     private_key=PRIVATE_KEY,
     public_key=PUBLIC_KEY,
     url_endpoint='https://ik.imagekit.io/4adj1pc55'
 )
-
 
 def upload_file(file, file_name):
     with open(file, "rb") as image_file:
@@ -37,15 +32,13 @@ def upload_file(file, file_name):
         print(result.url)
         return result.url
 
-
 def validate_url(url, artist,):
     # Url should contain imagekit.io, artist name
     if "imagekit.io" not in url:
         return False
     if artist not in url:
         return False
-    return True
-  
+    return True 
 
 # Load your style JSON
 with open(STYLE_FILE, 'r') as f:

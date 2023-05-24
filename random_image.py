@@ -3,7 +3,8 @@ from random import randint
 URL_ROOT = "https://raw.githubusercontent.com/JoshuaPeddle/ImageTransfer-server/master/random_images/"
 
 
-# Get a list of filenames from random_images folder, these corrospond to the images that will be used for the random route
+# Get a list of filenames from random_images folder, these corrospond to the
+#  images that will be used for the random route
 def load_image_names():
     return os.listdir('./random_images')
 

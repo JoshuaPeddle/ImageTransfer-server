@@ -1,10 +1,9 @@
 from flask import Flask , request, send_file, Request
-from flask import current_app, g as app_ctx
+from flask import g as app_ctx
 from flask_cors import CORS
 from PIL import Image
 from models.models import generate, load_model, get_styles
 from random_image import generate_random_image_url
-import functools
 import time
 
 app = Flask(__name__)
@@ -26,7 +25,8 @@ def logging_after(response):
     return response
 
 '''
-This route should return a url to a random images hosted from the github repo that that project is hosted from
+This route should return a url to a random images hosted 
+from the github repo that that project is hosted from
 '''
 @app.route("/random", methods=['GET'])
 def _random():
@@ -34,7 +34,8 @@ def _random():
     return {'url': url}
 
 '''
-TODO: Should generalize the generate function to take in a model name and generate the image
+TODO: Should generalize the generate function to take
+ in a model name and generate the image
 '''
 @app.route("/generate/<model>", methods=['POST'])
 def _generate(model):
@@ -42,7 +43,8 @@ def _generate(model):
     return send_file(byte_arr, mimetype='image/jpg')
 
 '''
-TODO: Should generalize the generate function to take in a model name and generate the image
+TODO: Should generalize the generate function to take
+ in a model name and generate the image
 '''
 @app.route("/generate/<model>/<variant>", methods=['POST'])
 def _generate_variant(model, variant):

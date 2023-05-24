@@ -5,7 +5,8 @@ from models.utils import tensor_to_image
 from PIL.ImageOps import fit
 from numpy import asarray
 
-## Design a general class for generators so that we can easily add new models using a config file
+## Design a general class for generators so that we 
+# can easily add new models using a config file
 class Generator():
 
     def __init__(self, name, lite=False):
@@ -17,7 +18,8 @@ class Generator():
         return self.model is not None
     
     def from_pretrained_tflite(self):
-        model = hf_hub_download(repo_id="JoshuaPeddle/%sLite" % self.name, filename="model.tflite")
+        model = hf_hub_download(repo_id="JoshuaPeddle/%sLite" % self.name,
+                                 filename="model.tflite")
         self.model = tf.lite.Interpreter(model_path=model)
         self.model.allocate_tensors()
         self.input_details = self.model.get_input_details()
@@ -30,10 +32,11 @@ class Generator():
     def load_model(self):
         if self.lite:
             return self.from_pretrained_tflite()
-        self.model =  from_pretrained_keras("JoshuaPeddle/%s" % self.name, compile=False)
+        self.model =  from_pretrained_keras("JoshuaPeddle/%s" % self.name, 
+                                            compile=False)
 
     def generate(self, image):
-        if (self.lite == True):
+        if (self.lite):
             return self.generate_lite(image)
 
         IMAGE_SIZE = (256, 256)
