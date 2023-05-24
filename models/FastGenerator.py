@@ -94,6 +94,11 @@ class FastGenerator():
     @functools.lru_cache(maxsize=20)
     def preprosess_image(self, uuid, premultiply):
         image = self.image
+        original_shape = image.size
+        original_shape = (original_shape[1], original_shape[0])
+        ## If the image is larger than 384 in width or height, resize it down to 384.
+        if max(original_shape) > 384:
+            image = tf.image.resize(image, (384, 384), preserve_aspect_ratio=True)
         image = np.asarray(image)
         ## Drop the alpha channel if it exists
         if image.shape[-1] == 4:
@@ -107,14 +112,14 @@ class FastGenerator():
         ## Normalize the image
         image = (tf.cast(image, tf.float32) / 127.5) - 1
         image = tf.expand_dims(image, 0)
-        return image, uuid
+        return image, uuid, original_shape
     
 
     def generate(self, image, style, variant=None, premultiply=True, uuid=None):
         if (self.lite):
             return self.generate_lite(image, style, variant, premultiply, uuid)
         self.image = image
-        image, uuid = self.preprosess_image(uuid, premultiply)
+        image, uuid, original_shape = self.preprosess_image(uuid, premultiply)
         if variant is not None:
             style_image = self.style_images[style][variant]
         else:
@@ -123,7 +128,10 @@ class FastGenerator():
         stylized_image = outputs[0]
         stylized_image = tf.squeeze(stylized_image)
         stylized_image = stylized_image * 255.0
-        print(self.preprosess_image.cache_info())
+        if (image.shape[1] != original_shape[0] or image.shape[2] != original_shape[1]):
+            stylized_image = tf.image.resize(stylized_image, original_shape, preserve_aspect_ratio=True, method='lanczos3', antialias=True)
+    
+        #stylized_image = tf.image.resize(stylized_image, original_shape, preserve_aspect_ratio=True, method='lanczos3', antialias=True)
         return tensor_to_image(stylized_image)
     
     @functools.lru_cache(maxsize=20)
@@ -135,7 +143,6 @@ class FastGenerator():
         # Resize to 384 x 384
         image = tf.image.resize(image, (384, 384))
         image = np.asarray(image)
-        print(image)
         ## Drop the alpha channel if it exists
         if image.shape[-1] == 4:
             if premultiply:
