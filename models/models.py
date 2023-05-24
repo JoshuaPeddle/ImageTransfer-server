@@ -18,7 +18,7 @@ def generate(image, style, variant=None, uuid=None):
 
 # This return JSON. The key shoul dbe each style available, and the value should be a single URL corresponding to the first
 # entry of styles.json for that style
-@cache
+
 def get_styles():
     styles = generator.styles
     to_return = {}
@@ -33,7 +33,6 @@ def get_styles():
         to_return[style]['mini'] = bg
         to_return[style]['full_name'] = full_name
         to_return[style]['num_variants'] = len(styles[style]['style_images'])
-
     return to_return
 
     

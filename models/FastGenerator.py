@@ -17,7 +17,7 @@ class FastGenerator():
         self.styles = styles
         self.style_images = {}
         self.image = None
-        self.lite = True
+        self.lite = False
         self.lite_model = None
 
     def is_loaded(self):
@@ -37,13 +37,13 @@ class FastGenerator():
                     if val is not None:
                         self.style_images[key].append(val)
         for key, value in self.style_images.items():
-            #self.style_images[key] = [tf.nn.avg_pool(item, ksize=[3,3], strides=[1,1], padding='SAME') for item in value]
+            self.style_images[key] = [tf.nn.avg_pool(item, ksize=[3,3], strides=[1,1], padding='SAME') for item in value]
             print('pooling')
              
     def load_model(self):
         self.load_style_images()
         if self.lite:
-            lite_model =  tf.keras.utils.get_file('style_transform2.tflite', 'https://tfhub.dev/google/lite-model/magenta/arbitrary-image-stylization-v1-256/int8/transfer/1?lite-format=tflite')
+            lite_model =  tf.keras.utils.get_file('style_transform2.tflite', 'https://tfhub.dev/google/lite-model/magenta/arbitrary-image-stylization-v1-256/fp16/transfer/1?lite-format=tflite')
             self.lite_model = tf.lite.Interpreter(model_path=lite_model, num_threads=min(os.cpu_count(), 4))
             self.lite_model.allocate_tensors()
             self.style_predict_lite_setup()
@@ -54,7 +54,7 @@ class FastGenerator():
         return True
     
     def style_predict_lite_setup(self):
-        style_predict_path = tf.keras.utils.get_file('style_predict2.tflite', 'https://tfhub.dev/google/lite-model/magenta/arbitrary-image-stylization-v1-256/int8/prediction/1?lite-format=tflite')
+        style_predict_path = tf.keras.utils.get_file('style_predict2.tflite', 'https://tfhub.dev/google/lite-model/magenta/arbitrary-image-stylization-v1-256/fp16/prediction/1?lite-format=tflite')
          # Load the model.
         interpreter = tf.lite.Interpreter(model_path=style_predict_path)
         # Set model input.
@@ -63,7 +63,7 @@ class FastGenerator():
         # For ever style image process it using the below code and save the bottleneck in place of the image
         for key, value in self.style_images.items():
             for i, style_image in enumerate(value):
-                print(style_image)
+                #print(style_image)
                 interpreter.set_tensor(input_details[0]["index"], style_image)
                 # Calculate style bottleneck.
                 interpreter.invoke()
@@ -132,9 +132,10 @@ class FastGenerator():
         image = self.image
         original_shape = image.size
         original_shape = (original_shape[1], original_shape[0])
-        image = tf.image.resize(image, (384, 384), method='lanczos5', antialias=True)
+        # Resize to 384 x 384
+        image = tf.image.resize(image, (384, 384))
         image = np.asarray(image)
-
+        print(image)
         ## Drop the alpha channel if it exists
         if image.shape[-1] == 4:
             if premultiply:
@@ -153,7 +154,7 @@ class FastGenerator():
     def generate_lite(self, image, style, variant=None, premultiply=True, uuid=None):
         print('lite')
         self.image = image
-        # Resize to 384 x 384
+    
         image, uuid, original_shape = self.preprosess_lite(uuid, premultiply)
         print(image.shape)
         if variant is not None:
@@ -166,6 +167,6 @@ class FastGenerator():
         stylized_image = self.lite_model.get_tensor(self.lite_model.get_output_details()[0]['index'])
         stylized_image = tf.squeeze(stylized_image)
         stylized_image = stylized_image * 255.0
-        stylized_image = tf.image.resize(stylized_image, original_shape[0:2], method='mitchellcubic', antialias=True)
+        stylized_image = tf.image.resize(stylized_image, original_shape[0:2], method='lanczos3')
         print(original_shape)
         return tensor_to_image(stylized_image)
