@@ -1,7 +1,11 @@
-import sys
+
 import pytest
-sys.path.append("..") # Adds higher directory to python modules path.
-from ..app import app as flask_app  # noqa: E402
+try :
+    from ..app import app as flask_app
+except ImportError :
+    from app import app as flask_app
+
+
 @pytest.fixture()
 def app():
     
