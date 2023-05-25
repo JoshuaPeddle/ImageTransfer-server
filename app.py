@@ -2,8 +2,8 @@ from flask import Flask , request, send_file, Request
 from flask import g as app_ctx
 from flask_cors import CORS
 from PIL import Image
-from models.models import generate, load_model, get_styles
-from random_image import generate_random_image_url
+from .models.models import generate, load_model, get_styles
+from .random_image import generate_random_image_url
 import time
 
 app = Flask(__name__)

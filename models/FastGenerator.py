@@ -1,10 +1,10 @@
 import tensorflow as tf
-from models.utils import tensor_to_image
+from ..models.utils import tensor_to_image
 import tensorflow_hub as hub
 import numpy as np
 import os
 import functools
-from models.utils import crop_center
+from ..models.utils import crop_center
 from random import randint
 from time import sleep
 import copy

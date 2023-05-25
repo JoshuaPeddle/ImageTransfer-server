@@ -1,4 +1,4 @@
-from models.FastGenerator import FastGenerator
+from ..models.FastGenerator import FastGenerator
 import json
 
 # Load style from ./styles.json
