@@ -86,7 +86,6 @@ arbitrary-image-stylization-v1-256/2'
                 style_bottleneck = interpreter.get_tensor(output_details["index"])
                 self.style_images[key][i] = copy.copy(style_bottleneck)
     
-
     def load_image(self, image_url,image_size=(256, 256), 
                    preserve_aspect_ratio=True, _sleep=False):
         """Loads and preprocesses images."""
@@ -135,7 +134,6 @@ arbitrary-image-stylization-v1-256/2'
         image = tf.expand_dims(image, 0)
         return image, uuid, original_shape
     
-
     def generate(self, image, style, variant=None, premultiply=True, uuid=None):
         if (self.lite):
             return self.generate_lite(image, style, variant, premultiply, uuid)
