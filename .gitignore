@@ -3,3 +3,5 @@ __pycache__
 models/styles.json.old
 .env
 temp.jpg
+venv
+.pytest_cache
