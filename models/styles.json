@@ -2,9 +2,8 @@
     "monet": {
         "style_images": [
             "https://ik.imagekit.io/4adj1pc55/monet_0_n6geYN8UM.jpg",
-            "https://ik.imagekit.io/4adj1pc55/monet_1_eq3Pp3_1Q.jpg",
             "https://ik.imagekit.io/4adj1pc55/monet_2_MsqwAaR2A.jpg",
-            "https://ik.imagekit.io/4adj1pc55/monet_3_DdXIEwww1.jpg",
+            "https://ik.imagekit.io/4adj1pc55/monet_1_eq3Pp3_1Q.jpg",
             "https://ik.imagekit.io/4adj1pc55/monet_4_IcHNqm-5m.jpg",
             "https://ik.imagekit.io/4adj1pc55/monet_5_e1vYOXTk5.jpg"
         ],
@@ -15,10 +14,9 @@
         "style_images": [
             "https://ik.imagekit.io/4adj1pc55/gogh_0_7p7YyHlFV.jpg",
             "https://ik.imagekit.io/4adj1pc55/gogh_1_k2M5WbzW4.jpg",
-            "https://ik.imagekit.io/4adj1pc55/gogh_2_3N08quZr9.jpg",
+            "https://ik.imagekit.io/4adj1pc55/gogh_5_zi8-InTdH.jpg",
             "https://ik.imagekit.io/4adj1pc55/gogh_3_2HN2O39C8.jpg",
-            "https://ik.imagekit.io/4adj1pc55/gogh_4_xyygBk7XO.jpg",
-            "https://ik.imagekit.io/4adj1pc55/gogh_5_zi8-InTdH.jpg"
+            "https://ik.imagekit.io/4adj1pc55/gogh_4_xyygBk7XO.jpg"
         ],
         "mini": "https://ik.imagekit.io/4adj1pc55/gogh_0_7p7YyHlFV.jpg",
         "style_name": "Van Gogh"
@@ -26,14 +24,13 @@
     "dali": {
         "style_images": [
             "https://ik.imagekit.io/4adj1pc55/dali_0_XR14cNsn0.jpg",
-            "https://ik.imagekit.io/4adj1pc55/dali_1_BduxrbZYkH.jpg",
-            "https://ik.imagekit.io/4adj1pc55/dali_2_VQiQHKPpD.jpg",
-            "https://ik.imagekit.io/4adj1pc55/dali_3_RPFerLIIf.jpg",
             "https://ik.imagekit.io/4adj1pc55/dali_4_keey-wvzZ.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_1_BduxrbZYkH.jpg",
             "https://ik.imagekit.io/4adj1pc55/dali_5_khgb-MO4O.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_2_VQiQHKPpD.jpg",
             "https://ik.imagekit.io/4adj1pc55/dali_6_Jiild5GPJ.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/dali_0_XR14cNsn0.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/dali_6_Jiild5GPJ.jpg",
         "style_name": "Dali"
     },
     "picasso": {
@@ -80,7 +77,7 @@
             "https://ik.imagekit.io/4adj1pc55/stained_2_FnSzQ1fKt.jpg",
             "https://ik.imagekit.io/4adj1pc55/stained_3_px2zuxgGD.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/stained_0_jhZpLxN-v.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/stained_2_FnSzQ1fKt.jpg",
         "style_name": "Stained Glass"
     },
     "gothic": {
