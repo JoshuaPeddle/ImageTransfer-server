@@ -1,5 +1,6 @@
+import sys
+sys.path.append("..") # Adds higher directory to python modules path.
 import pytest
-
 from ..app import app as flask_app
 @pytest.fixture()
 def app():

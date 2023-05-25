@@ -24,14 +24,13 @@
     "dali": {
         "style_images": [
             "https://ik.imagekit.io/4adj1pc55/dali_0_XR14cNsn0.jpg",
-            "https://ik.imagekit.io/4adj1pc55/dali_1_BduxrbZYkH.jpg",
-            "https://ik.imagekit.io/4adj1pc55/dali_2_VQiQHKPpD.jpg",
-            "https://ik.imagekit.io/4adj1pc55/dali_3_RPFerLIIf.jpg",
             "https://ik.imagekit.io/4adj1pc55/dali_4_keey-wvzZ.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_1_BduxrbZYkH.jpg",
             "https://ik.imagekit.io/4adj1pc55/dali_5_khgb-MO4O.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_2_VQiQHKPpD.jpg",
             "https://ik.imagekit.io/4adj1pc55/dali_6_Jiild5GPJ.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/dali_2_VQiQHKPpD.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/dali_6_Jiild5GPJ.jpg",
         "style_name": "Dali"
     },
     "picasso": {
