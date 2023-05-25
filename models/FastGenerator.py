@@ -102,8 +102,8 @@ arbitrary-image-stylization-v1-256/2'
         img = tf.io.decode_image(
             tf.io.read_file(image_path),
             channels=3, dtype=tf.float32)[tf.newaxis, ...]
-        img = crop_center(img)
         img = tf.image.resize(img, image_size, preserve_aspect_ratio=True)
+        img = crop_center(img)
         if _sleep:
             #print('sleep')
             sleep(0.05)
@@ -154,7 +154,7 @@ arbitrary-image-stylization-v1-256/2'
                                              preserve_aspect_ratio=True,
                                              method='lanczos3',
                                              antialias=True)
-            return tensor_to_image(stylized_image)
+        return tensor_to_image(stylized_image)
     
     @functools.lru_cache(maxsize=20)
     def preprocess_lite(self, uuid, premultiply):
