@@ -5,3 +5,4 @@ models/styles.json.old
 temp.jpg
 venv
 .pytest_cache
+.vscode

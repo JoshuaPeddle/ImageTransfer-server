@@ -1,14 +1,14 @@
-
 import pytest
+
 try:
     from app import app as flask_app
-   
+
 except ImportError:
-     from ..app import app as flask_app
+    from ..app import app as flask_app
+
 
 @pytest.fixture()
 def app():
-    
     # other setup can go here
 
     yield flask_app
@@ -24,4 +24,3 @@ def client(app):
 @pytest.fixture()
 def runner(app):
     return app.test_cli_runner()
-
