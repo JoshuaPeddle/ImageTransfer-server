@@ -1,7 +1,9 @@
 
 import pytest
-from ..app import app as flask_app
-
+try:
+    from ..app import app as flask_app
+except:
+    from app import app as flask_app
 
 @pytest.fixture()
 def app():
