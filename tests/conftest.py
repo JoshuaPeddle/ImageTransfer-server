@@ -1,9 +1,6 @@
 
 import pytest
-try :
-    from ..app import app as flask_app
-except ImportError :
-    from app import app as flask_app
+from ..app import app as flask_app
 
 
 @pytest.fixture()

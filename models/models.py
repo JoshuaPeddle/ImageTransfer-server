@@ -1,6 +1,5 @@
-from ..models.FastGenerator import FastGenerator
+from .FastGenerator import FastGenerator
 import json
-
 # Load style from ./styles.json
 with open('models/styles.json') as f:
     styles = json.load(f)
