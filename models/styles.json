@@ -1,11 +1,15 @@
 {
     "monet": {
         "style_images": [
-            "https://ik.imagekit.io/4adj1pc55/monet_0_n6geYN8UM.jpg",
-            "https://ik.imagekit.io/4adj1pc55/monet_2_MsqwAaR2A.jpg",
+            "https://ik.imagekit.io/4adj1pc55/monet_1_eq3Pp3_1Q.jpg",
+            "https://uploads5.wikiart.org/images/claude-monet/chrysanthemums-1897-1.jpg!Large.jpg",
             "https://ik.imagekit.io/4adj1pc55/monet_1_eq3Pp3_1Q.jpg",
             "https://ik.imagekit.io/4adj1pc55/monet_4_IcHNqm-5m.jpg",
-            "https://ik.imagekit.io/4adj1pc55/monet_5_e1vYOXTk5.jpg"
+            "https://uploads6.wikiart.org/images/claude-monet/woman-in-a-garden-1876.jpg!Large.jpg",
+            "https://uploads3.wikiart.org/images/claude-monet/chrysanthemums-1878.jpg!Large.jpg",
+            "https://uploads1.wikiart.org/images/claude-monet/church-at-varengeville-morning-1882.jpg!Large.jpg",
+            "https://uploads3.wikiart.org/00278/images/claude-monet/1880-sunset-at-lavacourt-oil-on-canvas-54-x-81-cm-private-collection-1.jpg!Large.jpg",
+            "https://uploads3.wikiart.org/images/claude-monet/san-giorgio-maggiore-at-dusk.jpg!Large.jpg"
         ],
         "mini": "https://ik.imagekit.io/4adj1pc55/monet_0_n6geYN8UM.jpg",
         "style_name": "Monet"
@@ -27,8 +31,11 @@
             "https://ik.imagekit.io/4adj1pc55/dali_4_keey-wvzZ.jpg",
             "https://ik.imagekit.io/4adj1pc55/dali_1_BduxrbZYkH.jpg",
             "https://ik.imagekit.io/4adj1pc55/dali_5_khgb-MO4O.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_6_Jiild5GPJ.jpg",
             "https://ik.imagekit.io/4adj1pc55/dali_2_VQiQHKPpD.jpg",
-            "https://ik.imagekit.io/4adj1pc55/dali_6_Jiild5GPJ.jpg"
+            "https://uploads1.wikiart.org/images/salvador-dali/the-enigma-of-my-desire-or-my-mother-my-mother-my-mother-1929.jpg!Large.jpg",
+            "https://uploads5.wikiart.org/images/salvador-dali/inaugural-gooseflesh.jpg!Large.jpg",
+            "https://uploads2.wikiart.org/images/salvador-dali/goddess-leaning-on-her-elbow-continuum-of-the-four-buttocks-or-five-rhinoceros-horns-making-a-1960.jpg!Large.jpg"
         ],
         "mini": "https://ik.imagekit.io/4adj1pc55/dali_6_Jiild5GPJ.jpg",
         "style_name": "Dali"
@@ -36,8 +43,8 @@
     "picasso": {
         "style_images": [
             "https://ik.imagekit.io/4adj1pc55/picasso_0_uVh1-W3Fd.jpg",
-            "https://ik.imagekit.io/4adj1pc55/picasso_1_dv-w0fSFc.jpg",
             "https://ik.imagekit.io/4adj1pc55/picasso_2_PKuDOC66C.jpg",
+            "https://ik.imagekit.io/4adj1pc55/picasso_1_dv-w0fSFc.jpg",
             "https://ik.imagekit.io/4adj1pc55/picasso_3_8fOhTYpzQ.jpg",
             "https://ik.imagekit.io/4adj1pc55/picasso_4_i6Cm_8GLJ.jpg",
             "https://ik.imagekit.io/4adj1pc55/picasso_5_F-6jPL18z.jpg",
@@ -60,21 +67,20 @@
     },
     "space": {
         "style_images": [
-            "https://ik.imagekit.io/4adj1pc55/space_0_cv-DYP-F-.jpg",
             "https://ik.imagekit.io/4adj1pc55/space_1_-gwPq69Sv.jpg",
-            "https://ik.imagekit.io/4adj1pc55/space_2_3CId2z_PZ.jpg",
-            "https://ik.imagekit.io/4adj1pc55/space_3_Ls-u0XkOL.jpg",
-            "https://ik.imagekit.io/4adj1pc55/space_4_mSqGa0M3l.jpg",
-            "https://ik.imagekit.io/4adj1pc55/space_5_FpvUHxUQI.jpg"
+            "https://ik.imagekit.io/4adj1pc55/space_0_cv-DYP-F-.jpg",
+            "https://ik.imagekit.io/4adj1pc55/space_5_FpvUHxUQI.jpg",
+            "https://ik.imagekit.io/4adj1pc55/space_2_3CId2z_PZ.jpg"
+
         ],
         "mini": "https://ik.imagekit.io/4adj1pc55/space_0_cv-DYP-F-.jpg",
         "style_name": "Outer Space"
     },
     "stained": {
         "style_images": [
+            "https://ik.imagekit.io/4adj1pc55/stained_2_FnSzQ1fKt.jpg",
             "https://ik.imagekit.io/4adj1pc55/stained_0_jhZpLxN-v.jpg",
             "https://ik.imagekit.io/4adj1pc55/stained_1_thcW3UZxT.jpg",
-            "https://ik.imagekit.io/4adj1pc55/stained_2_FnSzQ1fKt.jpg",
             "https://ik.imagekit.io/4adj1pc55/stained_3_px2zuxgGD.jpg"
         ],
         "mini": "https://ik.imagekit.io/4adj1pc55/stained_2_FnSzQ1fKt.jpg",
