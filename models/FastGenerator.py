@@ -106,7 +106,7 @@ arbitrary-image-stylization-v1-256/2"
         img = tf.io.decode_image(
             tf.io.read_file(image_path), channels=3, dtype=tf.float32
         )[tf.newaxis, ...]
-        img = tf.image.resize(img, image_size, preserve_aspect_ratio=True)
+        img = tf.image.resize(img, image_size, preserve_aspect_ratio=True, antialias=False, method='lanczos3')
         img = crop_center(img)
         if _sleep:
             # print('sleep')
@@ -120,7 +120,7 @@ arbitrary-image-stylization-v1-256/2"
         original_shape = (original_shape[1], original_shape[0])
         ## If the image is larger than 384 in width or height, resize it down to 384.
         if max(original_shape) > 384:
-            image = tf.image.resize(image, (384, 384), preserve_aspect_ratio=True)
+            image = tf.image.resize(image, (384, 384), preserve_aspect_ratio=True, antialias=False, method='gaussian')
         image = np.asarray(image)
         ## Drop the alpha channel if it exists
         if image.shape[-1] == 4:
