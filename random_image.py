@@ -13,8 +13,18 @@ def load_image_names():
 random_images = load_image_names()
 
 
-def generate_random_image_url():
-    return URL_ROOT + random_images[randint(0, len(random_images) - 1)]
+def generate_random_image_urls(n):
+    n = int(n)
+    if n > len(random_images):
+        n = len(random_images)
+
+    if n == 1:
+        return URL_ROOT + random_images[randint(0, len(random_images) - 1)]
+
+    urls = []
+    for i in range(n):
+        urls.append(URL_ROOT + random_images[randint(0, len(random_images) - 1)])
+    return urls
 
 
 # Path: models/models.py

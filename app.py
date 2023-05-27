@@ -3,7 +3,7 @@ from flask import g as app_ctx
 from flask_cors import CORS
 from PIL import Image
 from models.models import generate, load_model, get_styles
-from random_image import generate_random_image_url
+from random_image import generate_random_image_urls
 import time
 
 app = Flask(__name__)
@@ -30,8 +30,20 @@ from the github repo that that project is hosted from
 '''
 @app.route("/random", methods=['GET'])
 def _random():
-    url : str= generate_random_image_url() 
-    return {'url': url}
+    url : str= generate_random_image_urls(1) 
+    return {'urls': [url]}
+
+
+'''
+This route should return a json response with N urls to a random images hosted
+from the github repo that that project is hosted from
+'''
+@app.route("/random/<n>", methods=['GET'])
+def _nRandom(n):
+    urls : str= generate_random_image_urls(n) 
+    return {'urls': urls}
+
+
 
 '''
 TODO: Should generalize the generate function to take
