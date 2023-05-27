@@ -1,5 +1,4 @@
 import tensorflow as tf
-
 from .utils import tensor_to_image
 from .utils import crop_center
 import tensorflow_hub as hub
@@ -9,6 +8,13 @@ import functools
 from random import randint
 from time import sleep
 import copy
+gpus = tf.config.experimental.list_physical_devices('GPU')
+if gpus:
+  try:
+    for gpu in gpus:
+      tf.config.experimental.set_memory_growth(gpu, True)
+  except RuntimeError as e:
+    print(e)
 
 LITE_STYLE_TRANSFORM = "https://tfhub.dev/google/lite-model/magenta/\
 arbitrary-image-stylization-v1-256/fp16/transfer/1?lite-format=tflite"
