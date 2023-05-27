@@ -120,6 +120,7 @@ arbitrary-image-stylization-v1-256/2"
             return img
         except (ValueError,tf.python.framework.errors_impl.InvalidArgumentError, Exception,):
             if retries > 0:
+                sleep(2)
                 return self.load_image(image_url, image_size, preserve_aspect_ratio, _sleep, retries - 1)
             print("failed to load image")
             return None
