@@ -8,13 +8,14 @@ import functools
 from random import randint
 from time import sleep
 import copy
-gpus = tf.config.experimental.list_physical_devices('GPU')
+
+gpus = tf.config.experimental.list_physical_devices("GPU")
 if gpus:
-  try:
-    for gpu in gpus:
-      tf.config.experimental.set_memory_growth(gpu, True)
-  except RuntimeError as e:
-    print(e)
+    try:
+        for gpu in gpus:
+            tf.config.experimental.set_memory_growth(gpu, True)
+    except RuntimeError as e:
+        print(e)
 
 LITE_STYLE_TRANSFORM = "https://tfhub.dev/google/lite-model/magenta/\
 arbitrary-image-stylization-v1-256/fp16/transfer/1?lite-format=tflite"
@@ -96,7 +97,12 @@ arbitrary-image-stylization-v1-256/2"
                 self.style_images[key][i] = copy.copy(style_bottleneck)
 
     def load_image(
-        self, image_url, image_size=(256, 256), preserve_aspect_ratio=True, _sleep=False, retries=5
+        self,
+        image_url,
+        image_size=(256, 256),
+        preserve_aspect_ratio=True,
+        _sleep=False,
+        retries=5,
     ):
         """Loads and preprocesses images."""
         try:
@@ -121,10 +127,11 @@ arbitrary-image-stylization-v1-256/2"
         except (ValueError, Exception):
             if retries > 0:
                 sleep(2)
-                return self.load_image(image_url, image_size, preserve_aspect_ratio, _sleep, retries - 1)
+                return self.load_image(
+                    image_url, image_size, preserve_aspect_ratio, _sleep, retries - 1
+                )
             print("failed to load image")
             return None
-
 
     @functools.lru_cache(maxsize=20)
     def preprocess_image(self, uuid, premultiply):
@@ -163,7 +170,9 @@ arbitrary-image-stylization-v1-256/2"
         self.image = image
         image, uuid, original_shape = self.preprocess_image(uuid, premultiply)
         if variant is not None:
-            if variant >= len(self.style_images[style]): # Handle case where server has less than reported number of styles
+            if variant >= len(
+                self.style_images[style]
+            ):  # Handle case where server has less than reported number of styles
                 variant = randint(0, len(self.style_images[style]) - 1)
             style_image = self.style_images[style][variant]
         else:
