@@ -96,34 +96,34 @@ arbitrary-image-stylization-v1-256/2"
                 self.style_images[key][i] = copy.copy(style_bottleneck)
 
     def load_image(
-        self, image_url, image_size=(256, 256), preserve_aspect_ratio=True, _sleep=False
+        self, image_url, image_size=(256, 256), preserve_aspect_ratio=True, _sleep=False, retries=5
     ):
         """Loads and preprocesses images."""
-        # Cache image file locally.
         try:
             image_path = tf.keras.utils.get_file(
                 os.path.basename(image_url)[-128:], image_url
             )
-        except (ValueError, Exception):
+            img = tf.io.decode_image(
+                tf.io.read_file(image_path), channels=3, dtype=tf.float32
+            )[tf.newaxis, ...]
+            img = tf.image.resize(
+                img,
+                image_size,
+                preserve_aspect_ratio=True,
+                antialias=False,
+                method="lanczos3",
+            )
+            img = crop_center(img)
+            if _sleep:
+                # print('sleep')
+                sleep(0.1)
+            return img
+        except (ValueError,tf.python.framework.errors_impl.InvalidArgumentError, Exception,):
+            if retries > 0:
+                return self.load_image(image_url, image_size, preserve_aspect_ratio, _sleep, retries - 1)
             print("failed to load image")
             return None
-        # Load and convert to float32 numpy array,
-        # add batch dimension, and normalize to range [0, 1].
-        img = tf.io.decode_image(
-            tf.io.read_file(image_path), channels=3, dtype=tf.float32
-        )[tf.newaxis, ...]
-        img = tf.image.resize(
-            img,
-            image_size,
-            preserve_aspect_ratio=True,
-            antialias=False,
-            method="lanczos3",
-        )
-        img = crop_center(img)
-        if _sleep:
-            # print('sleep')
-            sleep(0.05)
-        return img
+
 
     @functools.lru_cache(maxsize=20)
     def preprocess_image(self, uuid, premultiply):
