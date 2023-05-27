@@ -2,14 +2,14 @@
     "monet": {
         "style_images": [
             "https://ik.imagekit.io/4adj1pc55/monet_1_eq3Pp3_1Q.jpg",
-            "https://uploads5.wikiart.org/images/claude-monet/chrysanthemums-1897-1.jpg!Large.jpg",
+            "https://ik.imagekit.io/4adj1pc55/monet_1_8zDRzUUue.jpg",
             "https://ik.imagekit.io/4adj1pc55/monet_1_eq3Pp3_1Q.jpg",
             "https://ik.imagekit.io/4adj1pc55/monet_4_IcHNqm-5m.jpg",
-            "https://uploads6.wikiart.org/images/claude-monet/woman-in-a-garden-1876.jpg!Large.jpg",
-            "https://uploads3.wikiart.org/images/claude-monet/chrysanthemums-1878.jpg!Large.jpg",
-            "https://uploads1.wikiart.org/images/claude-monet/church-at-varengeville-morning-1882.jpg!Large.jpg",
-            "https://uploads3.wikiart.org/00278/images/claude-monet/1880-sunset-at-lavacourt-oil-on-canvas-54-x-81-cm-private-collection-1.jpg!Large.jpg",
-            "https://uploads3.wikiart.org/images/claude-monet/san-giorgio-maggiore-at-dusk.jpg!Large.jpg"
+            "https://ik.imagekit.io/4adj1pc55/monet_4_7YtBnrLlf.jpg",
+            "https://ik.imagekit.io/4adj1pc55/monet_5_dK5KNSbAj.jpg",
+            "https://ik.imagekit.io/4adj1pc55/monet_6_3akqf10wU.jpg",
+            "https://ik.imagekit.io/4adj1pc55/monet_7_RYHRLk4OL.jpg",
+            "https://ik.imagekit.io/4adj1pc55/monet_8_hVBobyoQd.jpg"
         ],
         "mini": "https://ik.imagekit.io/4adj1pc55/monet_0_n6geYN8UM.jpg",
         "style_name": "Monet"
@@ -33,9 +33,9 @@
             "https://ik.imagekit.io/4adj1pc55/dali_5_khgb-MO4O.jpg",
             "https://ik.imagekit.io/4adj1pc55/dali_6_Jiild5GPJ.jpg",
             "https://ik.imagekit.io/4adj1pc55/dali_2_VQiQHKPpD.jpg",
-            "https://uploads1.wikiart.org/images/salvador-dali/the-enigma-of-my-desire-or-my-mother-my-mother-my-mother-1929.jpg!Large.jpg",
-            "https://uploads5.wikiart.org/images/salvador-dali/inaugural-gooseflesh.jpg!Large.jpg",
-            "https://uploads2.wikiart.org/images/salvador-dali/goddess-leaning-on-her-elbow-continuum-of-the-four-buttocks-or-five-rhinoceros-horns-making-a-1960.jpg!Large.jpg"
+            "https://ik.imagekit.io/4adj1pc55/dali_6_69dzQ26WW.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_7_NIJXwIyt4.jpg",
+            "https://ik.imagekit.io/4adj1pc55/dali_8_y4eNwd18A.jpg"
         ],
         "mini": "https://ik.imagekit.io/4adj1pc55/dali_6_Jiild5GPJ.jpg",
         "style_name": "Dali"
@@ -71,7 +71,6 @@
             "https://ik.imagekit.io/4adj1pc55/space_0_cv-DYP-F-.jpg",
             "https://ik.imagekit.io/4adj1pc55/space_5_FpvUHxUQI.jpg",
             "https://ik.imagekit.io/4adj1pc55/space_2_3CId2z_PZ.jpg"
-
         ],
         "mini": "https://ik.imagekit.io/4adj1pc55/space_0_cv-DYP-F-.jpg",
         "style_name": "Outer Space"
