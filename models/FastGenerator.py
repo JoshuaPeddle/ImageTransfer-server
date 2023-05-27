@@ -162,6 +162,8 @@ arbitrary-image-stylization-v1-256/2"
         self.image = image
         image, uuid, original_shape = self.preprocess_image(uuid, premultiply)
         if variant is not None:
+            if variant >= len(self.style_images[style]): # Handle case where server has less than reported number of styles
+                variant = randint(0, len(self.style_images[style]) - 1)
             style_image = self.style_images[style][variant]
         else:
             style_image = self.style_images[style][
