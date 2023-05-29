@@ -1,6 +1,7 @@
 from PIL import Image
 import tensorflow as tf
 import io
+from flask import  Request
 
 
 def tensor_to_image(tensor):
@@ -22,3 +23,11 @@ def crop_center(image):
         image, offset_y, offset_x, new_shape, new_shape
     )
     return image
+
+def request_to_image(request: Request):
+    image = request.files.get("image", False)
+    if not image:
+        image = request.files["image"]
+    uuid = image.filename
+    uuid = uuid[:-4]
+    return Image.open(image), uuid

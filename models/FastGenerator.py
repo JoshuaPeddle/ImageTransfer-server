@@ -138,7 +138,7 @@ arbitrary-image-stylization-v1-256/2"
             stylized_image = tf.image.resize(
                 stylized_image,
                 original_shape,
-                preserve_aspect_ratio=True,
+                preserve_aspect_ratio=False,
                 method="lanczos3",
                 antialias=True,
             )
