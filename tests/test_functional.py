@@ -3,6 +3,11 @@ from PIL import Image
 from io import BytesIO
 
 
+def test_hello(client):
+    response = client.get("/")
+    assert response.status_code == 200
+    assert b"Hello World" in response.data
+
 def test_random_image(client):
     response = client.get("/random")
     assert response.status_code == 200
@@ -13,6 +18,15 @@ ImageTransfer-server/master/random_images"
     )
     assert b".jpg" in response.data
 
+def test_random_images(client):
+    response = client.get("/random/5")
+    assert response.status_code == 200
+    assert (
+        b"https://raw.githubusercontent.com/JoshuaPeddle/\
+ImageTransfer-server/master/random_images"
+        in response.data
+    )
+    assert b".jpg" in response.data
 
 def test_styles(client):
     response = client.get("/styles")
@@ -22,8 +36,23 @@ def test_styles(client):
     assert b"num_variants" in response.data
 
 
-def test_generate_variant(client):
+def test_generate_random(client):
     test_image_src = Path(__file__).parent / "test_image.jpg"
+    image = Image.open(test_image_src)
+    response = client.post(
+        "/generate/monet",
+        data={
+            "image": (test_image_src).open("rb"),
+        },
+    )
+    assert response.status_code == 200
+    assert b"JFIF" in response.data
+    res_image = Image.open(BytesIO(response.data))
+    assert res_image.size == image.size
+
+
+def test_generate_variant(client):
+    test_image_src = Path(__file__).parent / "test_image2.jpg"
     image = Image.open(test_image_src)
     response = client.post(
         "/generate/monet/1",
