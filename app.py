@@ -37,7 +37,8 @@ TODO: Should generalize the generate function to take
 """
 @app.route("/generate/<model>", methods=["POST"])
 def _generate(model):
-    byte_arr = generate(request_to_image(request), model)
+    image, uuid = request_to_image(request)
+    byte_arr = generate(image, style=model, variant=None, uuid=uuid)
     return send_file(byte_arr, mimetype="image/jpg")
 
 
