@@ -14,6 +14,8 @@ def load_model():
 
 
 def generate(image, style, variant=None, uuid=None):
+    if not generator.is_loaded():
+        load_model()
     return generator.generate(image, style=style, variant=variant, uuid=uuid)
 
 
