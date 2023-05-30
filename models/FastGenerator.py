@@ -88,9 +88,15 @@ arbitrary-image-stylization-v1-256/2"
 
     @functools.lru_cache(maxsize=100)
     def preprocess_image(self, uuid, premultiply):
+        rotated = False
         image = self.image
         original_shape = image.size
         original_shape = (original_shape[1], original_shape[0])
+        # if image is taller than wide, rotate it
+        if original_shape[0] > original_shape[1]:
+            image = tf.image.rot90(image)
+            original_shape = (original_shape[1], original_shape[0])
+            rotated = True
         ## If the image is larger than 384 in width or height, resize it down to 384.
         if max(original_shape) > 384:
             image = tf.image.resize(
@@ -115,11 +121,11 @@ arbitrary-image-stylization-v1-256/2"
         ## Normalize the image
         image = (tf.cast(image, tf.float32) / 127.5) - 1
         image = tf.expand_dims(image, 0)
-        return image, uuid, original_shape
+        return image, uuid, original_shape, rotated
 
     def generate(self, image, style, variant=None, premultiply=True, uuid=None):
         self.image = image
-        image, uuid, original_shape = self.preprocess_image(uuid, premultiply)
+        image, uuid, original_shape, rotated = self.preprocess_image(uuid, premultiply)
         if variant is not None:
             if variant >= len(
                 self.style_images[style]
@@ -142,4 +148,6 @@ arbitrary-image-stylization-v1-256/2"
                 method="lanczos3",
                 antialias=True,
             )
+        if rotated:
+            stylized_image = tf.image.rot90(stylized_image, k=-1)
         return tensor_to_image(stylized_image)
