@@ -54,16 +54,15 @@
         "mini": "https://ik.imagekit.io/4adj1pc55/picasso_0_uVh1-W3Fd.jpg",
         "style_name": "Picasso"
     },
-    "frank": {
+    "wood": {
         "style_images": [
-            "https://ik.imagekit.io/4adj1pc55/frank_0_O3t6BE_en.jpg",
-            "https://ik.imagekit.io/4adj1pc55/frank_1_FgcR1L8T4.jpg",
-            "https://ik.imagekit.io/4adj1pc55/frank_2_TBiyE0qCv.jpg",
-            "https://ik.imagekit.io/4adj1pc55/frank_3_N58KC8Wz6.jpg",
-            "https://ik.imagekit.io/4adj1pc55/frank_4_S3K0spMJ1.jpg"
+            "https://ik.imagekit.io/4adj1pc55/wood_0_hkK3MAII1.jpg",
+            "https://ik.imagekit.io/4adj1pc55/wood_1_9utEWwGHO.jpg",
+            "https://ik.imagekit.io/4adj1pc55/wood_2__14hCYGRg.jpg",
+            "https://ik.imagekit.io/4adj1pc55/wood_3_4a7qh7uQn.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/frank_4_S3K0spMJ1.jpg",
-        "style_name": "Lisa Frank"
+        "mini": "https://ik.imagekit.io/4adj1pc55/wood_1_9utEWwGHO.jpg",
+        "style_name": "Wood"
     },
     "space": {
         "style_images": [
