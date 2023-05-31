@@ -7,7 +7,7 @@ URL_ROOT = "https://raw.githubusercontent.com/JoshuaPeddle/ImageTransfer-server/
 # Get a list of filenames from random_images folder, these corrospond to the
 #  images that will be used for the random route
 def load_image_names():
-    return os.listdir("./random_images")
+    return  [f for f in os.listdir("./random_images") if not f.startswith('.')]
 
 
 random_images = load_image_names()
