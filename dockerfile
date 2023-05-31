@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir gunicorn
 
 COPY . .
 
-CMD [ "gunicorn","-t","1","-k","gthread" ,"-w","1", "-b", "0.0.0.0:5002", "app:app" ]
+CMD [ "gunicorn","-w","1","--threads","1","-k","gthread", "-b", "0.0.0.0:5002", "app:app" ]
