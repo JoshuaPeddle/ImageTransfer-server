@@ -1,0 +1,12 @@
+__pycache__
+.local
+models/styles.json.old
+.env
+temp.jpg
+venv
+.pytest_cache
+.vscode
+.git
+.github
+.ruff_cache
+new_random_images

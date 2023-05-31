@@ -1,0 +1,10 @@
+
+services:
+  server:
+    build: .
+    ports:
+      - "5002:5002"
+    volumes:
+      - cache:/root/.keras
+volumes:
+  cache:
