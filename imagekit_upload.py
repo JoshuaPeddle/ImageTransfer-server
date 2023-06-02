@@ -2,7 +2,7 @@ import os
 import requests
 import base64
 import json
-from PIL import Image
+from PIL import Image, ImageOps
 from io import BytesIO
 from imagekitio import ImageKit
 from dotenv import load_dotenv
@@ -85,6 +85,27 @@ for artist, data in styles.items():
                 styles[artist]["mini"] = new_url
         except Exception as e:
             print(f"Failed to process URL {url}: {e}")
+
+# Go through each style, and make sure the mini is set, download mini and resize to 100*60 if not
+for artist, data in styles.items():
+    try:
+        mini = data["mini"]
+        if not validate_url(mini, artist):
+            raise Exception(f"Invalid URL: {mini}")
+        response = requests.get(mini, headers=headers)
+        img = Image.open(BytesIO(response.content))
+        if img.size != (100, 60):
+            img = ImageOps.fit(img, (170,100))
+            img.save("temp.webp")
+            new_key = f"{artist}/mini.webp"
+            new_url = upload_file("temp.webp", new_key)
+            is_valid = validate_url(new_url, artist)
+            if not is_valid:
+                raise Exception(f"Invalid URL: {new_url}")
+            styles[artist]["mini"] = new_url
+
+    except Exception as e:
+        print(f"Failed to process URL {url}: {e}")
 
 # Save the updated JSON
 with open(STYLE_FILE, "w") as f:

@@ -11,7 +11,7 @@
             "https://ik.imagekit.io/4adj1pc55/monet_7_RYHRLk4OL.jpg",
             "https://ik.imagekit.io/4adj1pc55/monet_8_hVBobyoQd.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/monet_0_n6geYN8UM.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/monet_mini_X8eitFvlo.webp",
         "style_name": "Monet"
     },
     "gogh": {
@@ -22,7 +22,7 @@
             "https://ik.imagekit.io/4adj1pc55/gogh_3_2HN2O39C8.jpg",
             "https://ik.imagekit.io/4adj1pc55/gogh_4_xyygBk7XO.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/gogh_0_7p7YyHlFV.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/gogh_mini_XNkWdJLkA.webp",
         "style_name": "Van Gogh"
     },
     "dali": {
@@ -37,7 +37,7 @@
             "https://ik.imagekit.io/4adj1pc55/dali_7_NIJXwIyt4.jpg",
             "https://ik.imagekit.io/4adj1pc55/dali_8_y4eNwd18A.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/dali_6_Jiild5GPJ.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/dali_mini_ibZSJf1P0.webp",
         "style_name": "Dali"
     },
     "picasso": {
@@ -51,7 +51,7 @@
             "https://ik.imagekit.io/4adj1pc55/picasso_6_PpZP8IDEk.jpg",
             "https://ik.imagekit.io/4adj1pc55/picasso_7_OqD4aSGd7.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/picasso_0_uVh1-W3Fd.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/picasso_mini_L60uBnNWH.webp",
         "style_name": "Picasso"
     },
     "wood": {
@@ -61,7 +61,7 @@
             "https://ik.imagekit.io/4adj1pc55/wood_2__14hCYGRg.jpg",
             "https://ik.imagekit.io/4adj1pc55/wood_3_4a7qh7uQn.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/wood_1_9utEWwGHO.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/wood_mini_5gM_st4ZE.webp",
         "style_name": "Wood"
     },
     "space": {
@@ -71,7 +71,7 @@
             "https://ik.imagekit.io/4adj1pc55/space_5_FpvUHxUQI.jpg",
             "https://ik.imagekit.io/4adj1pc55/space_2_3CId2z_PZ.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/space_0_cv-DYP-F-.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/space_mini_Zvnwj6OMQ.webp",
         "style_name": "Outer Space"
     },
     "stained": {
@@ -81,7 +81,7 @@
             "https://ik.imagekit.io/4adj1pc55/stained_1_thcW3UZxT.jpg",
             "https://ik.imagekit.io/4adj1pc55/stained_3_px2zuxgGD.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/stained_2_FnSzQ1fKt.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/stained_mini_fgt6UPe7S.webp",
         "style_name": "Stained Glass"
     },
     "gothic": {
@@ -90,7 +90,7 @@
             "https://ik.imagekit.io/4adj1pc55/gothic_1_DOju8tHmbg.jpg",
             "https://ik.imagekit.io/4adj1pc55/gothic_2_34bGITFZ9.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/gothic_0_b3_dgXqhV.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/gothic_mini_u25RW7yBN.webp",
         "style_name": "Gothic"
     },
     "kaleidoscope": {
@@ -99,7 +99,7 @@
             "https://ik.imagekit.io/4adj1pc55/kaleidoscope_1_nJSP6-OAu.jpg",
             "https://ik.imagekit.io/4adj1pc55/kaleidoscope_2_0_ttvLP00j.jpg"
         ],
-        "mini": "https://ik.imagekit.io/4adj1pc55/kaleidoscope_0_aT2sySIl3Z.jpg",
+        "mini": "https://ik.imagekit.io/4adj1pc55/kaleidoscope_mini_9_hMU2eIU.webp",
         "style_name": "Kaleidoscope"
     }
 }
