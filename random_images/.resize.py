@@ -3,9 +3,13 @@
 
 import os
 from PIL import Image
+from pathlib import Path
 
-for filename in os.listdir('new_random_images'):
+Path('/root/dir/sub/file.ext').stem
+for filename in os.listdir('.'):
     if filename.endswith('.jpg'):
-        im = Image.open('new_random_images/' + filename)
+        im = Image.open('./' + filename)
         im = im.resize((384, 256), Image.Resampling.LANCZOS )
-        im.save('new_random_images/' + "new."+filename, quality=92)
+        new_filename = Path('./' + filename).stem
+        print(new_filename)
+        im.save('./' + "new."+new_filename+'.webp', quality=85, method=6)
