@@ -86,7 +86,8 @@ for artist, data in styles.items():
         except Exception as e:
             print(f"Failed to process URL {url}: {e}")
 
-# Go through each style, and make sure the mini is set, download mini and resize to 100*60 if not
+# Go through each style, and make sure the mini is set, 
+# download mini and resize to 100*60 if not
 for artist, data in styles.items():
     try:
         mini = data["mini"]
@@ -95,7 +96,7 @@ for artist, data in styles.items():
         response = requests.get(mini, headers=headers)
         img = Image.open(BytesIO(response.content))
         if img.size != (100, 60):
-            img = ImageOps.fit(img, (170,100))
+            img = ImageOps.fit(img, (170, 100))
             img.save("temp.webp")
             new_key = f"{artist}/mini.webp"
             new_url = upload_file("temp.webp", new_key)
